@@ -179,7 +179,8 @@
 
       <details open id=all_public_repos>
         <summary>
-          <b>ALL PUBLIC REPOS ({{public_repos_loading?"loading...":public_repos.length}})</b>
+          <b>ALL PUBLIC REPOS ({{public_repos.length}})</b>
+          <span v-if="public_repos_loading">loading...</span>
         </summary>
         <div>
           <div style="font-size:smaller">
@@ -626,7 +627,9 @@
     .then(arr=>{
       if(arr.constructor!=Array){
         console.error({arr});
-        throw("error resposta api github");
+        app.public_repos_loading=false;
+        document.querySelector("#all_public_repos").style.display="none";
+        throw("Error resposta api github");
       }
 
       //end recursive call
