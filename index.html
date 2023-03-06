@@ -121,13 +121,12 @@
         alt="ICRA logo"
       >
     </div>
-
     <div style="margin-top:10px;">
-      <!--all apps-->
-      <div>
-        <div @click="clear_current_app()" style="cursor:pointer">
+      <!--featured apps list-->
+      <details open>
+        <summary style="white-space:nowrap">
           <b>FEATURED APPS &amp; TOOLS ({{repos.length}})</b>
-        </div>
+        </summary>
         <ul class=gris style="list-style:none;padding-left:10px;margin-top:10px">
           <li
             class="left_list_item"
@@ -137,102 +136,109 @@
             v-html="repo.name"
           ></li>
         </ul>
-      </div>
+      </details>
 
       <!--all contributors-->
-      <div>
-        <b>CONTRIBUTORS ({{Object.keys(all_people).length}})</b>
-        <div style="font-size:smaller">
-          Sort by
-          <b>/</b>
-          <span v-for="key in ['name','contributions']">
-            <a
-              @click="sort_people_by=key"
-              :style="{color:sort_people_by==key?'black':''}"
-              v-html="key"
-            ></a>
+      <details open>
+        <summary><b>CONTRIBUTORS ({{Object.keys(all_people).length}})</b></summary>
+        <div>
+          <div style="font-size:smaller">
+            Sort by
             <b>/</b>
-          </span>
+            <span v-for="key in ['name','contributions']">
+              <a
+                @click="sort_people_by=key"
+                :style="{color:sort_people_by==key?'black':''}"
+                v-html="key"
+              ></a>
+              <b>/</b>
+            </span>
+          </div>
+          <ul
+            id=all_contributors
+            style="
+              list-style:none;
+              padding-left:10px;
+            "
+          >
+            <li v-for="arr,name in all_people">
+              <div style="white-space:nowrap;">{{name}} ({{arr.length}})</div>
+              <ul>
+                <li
+                  v-for="repo in arr.map(per=>per.project)"
+                  class="left_list_item gris"
+                  :current="current_app==repo"
+                  @click="set_current_app(repo)"
+                  v-html="repo.name"
+                ></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-        <ul
-          id=all_contributors
-          style="
-            list-style:none;
-            padding-left:10px;
-          "
-        >
-          <li v-for="arr,name in all_people">
-            <div style="white-space:nowrap;">{{name}} ({{arr.length}})</div>
-            <ul>
-              <li
-                v-for="repo in arr.map(per=>per.project)"
-                class="left_list_item gris"
-                :current="current_app==repo"
-                @click="set_current_app(repo)"
-                v-html="repo.name"
-              ></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      </details>
 
-      <div id="all_public_repos">
-        <b>ALL PUBLIC REPOS ({{public_repos_loading?"loading...":public_repos.length}})</b>
-        <div style="font-size:smaller">
-          Sort by
-          <b>/</b>
-          <span v-for="key in ['name','updated','created','stars','forks','contributors']">
-            <a
-              @click="sort_public_repos_by(key)"
-              v-html="key"
-              :style="{color:key==public_repos_sort_by?'black':''}"
-            ></a>
+      <details open id=all_public_repos>
+        <summary>
+          <b>ALL PUBLIC REPOS ({{public_repos_loading?"loading...":public_repos.length}})</b>
+        </summary>
+        <div>
+          <div style="font-size:smaller">
+            Sort by
             <b>/</b>
-          </span>
+            <span v-for="key in ['name','updated','created','stars','forks','contributors']">
+              <a
+                @click="sort_public_repos_by(key)"
+                v-html="key"
+                :style="{color:key==public_repos_sort_by?'black':''}"
+              ></a>
+              <b>/</b>
+            </span>
+          </div>
+          <ul>
+            <li v-for="repo in public_repos">
+              <div style="display:flex;">
+                <a :href="repo.html_url" target="_blank">{{repo.full_name}}</a>
+                <div v-if="repo.stargazers_count" style="display:flex;align-items:center;">
+                  <svg height="16" width="16">
+                    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882
+                    3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75
+                    0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0
+                    01-1.088-.79l.72-4.194L.818 6.374a.75.75 0
+                    01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615
+                    5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0
+                    01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77
+                    1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75
+                    0 01-.564-.41L8 2.694v.001z"></path>
+                  </svg>
+                  <div>{{repo.stargazers_count}}</div>
+                </div>
+
+                <div v-if="repo.forks_count" style="display:flex;align-items:center;">
+                  <svg height="16" width="16">
+                    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0
+                    011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75
+                    8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0
+                    002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0
+                    01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5
+                    0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000
+                    1.5z"></path>
+                  </svg>
+                  <div>{{repo.forks_count}}</div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li v-for="repo in public_repos">
-            <div style="display:flex;">
-              <a :href="repo.html_url" target="_blank">{{repo.full_name}}</a>
-              <div v-if="repo.stargazers_count" style="display:flex;align-items:center;">
-                <svg height="16" width="16">
-                  <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882
-                  3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75
-                  0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0
-                  01-1.088-.79l.72-4.194L.818 6.374a.75.75 0
-                  01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615
-                  5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0
-                  01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77
-                  1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75
-                  0 01-.564-.41L8 2.694v.001z"></path>
-                </svg>
-                <div>{{repo.stargazers_count}}</div>
-              </div>
+      </details>
 
-              <div v-if="repo.forks_count" style="display:flex;align-items:center;">
-                <svg height="16" width="16">
-                  <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0
-                  011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75
-                  8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0
-                  002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0
-                  01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5
-                  0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000
-                  1.5z"></path>
-                </svg>
-                <div>{{repo.forks_count}}</div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <b>NEW PROJECT</b>
+      <details open>
+        <summary><b>NEW PROJECT</b></summary>
         <p class=gris>
-          Submit a Pull Request here:
-          <a href="//github.com/icra/itlab" target="_blank">icra/itlab</a>
+          To create a new project and/or correct information submit a Pull
+          Request
+          <a href="https://github.com/icra/itlab/blob/main/apps.json" target="_blank">here</a>
         </p>
-      </div>
+      </details>
     </div>
   </div>
 
@@ -309,6 +315,7 @@
     <div v-if="current_app">
       <!--navigation buttons-->
       <div style="display:flex;">
+        <button title="All tools"     style="width:75px" @click="clear_current_app()">&#9650;</button>
         <button title="Previous tool" style="width:75px" @click="current_app=repos[current_app_index-1]" :disabled="current_app_index<=0">&#9664;</button>
         <button title="Next tool"     style="width:75px" @click="current_app=repos[current_app_index+1]" :disabled="current_app_index>=repos.length-1">&#9654;</button>
       </div>
@@ -442,7 +449,7 @@
       repos:[],
       current_app:false,
       //left list sorting
-      sort_people_by:"name",
+      sort_people_by:"contributions",
 
       //public repos
       public_repos:[],
@@ -605,7 +612,7 @@
   //la clau no té permisos, només pot llegir repositoris públics
   let headers={
     "Accept":"application/vnd.github+json",
-    "Authorization":"Bearer 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",
+    "Authorization":"Bearer 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",
   };
 
   //funció que llegeix repositoris github
@@ -617,7 +624,7 @@
     )
     .then(r=>r.json())
     .then(arr=>{
-      if(!arr.constructor==Array){
+      if(arr.constructor!=Array){
         console.error({arr});
         throw("error resposta api github");
       }

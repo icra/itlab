@@ -259,7 +259,7 @@
     )
     .then(r=>r.json())
     .then(arr=>{
-      if(!arr.constructor==Array){
+      if(arr.constructor!=Array){
         console.error({arr});
         throw("error resposta api github");
       }
