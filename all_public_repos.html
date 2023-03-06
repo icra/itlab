@@ -1,0 +1,289 @@
+<!doctype html><html><head>
+  <meta charset=utf8>
+  <title>ICRA Repositoris públics</title>
+  <style>
+    table{
+      border-collapse:collapse;
+    }
+    table#repos th{
+      background:#ddd;
+      text-align:left;
+      font-weight:normal;
+    }
+    summary{
+      cursor:pointer;
+    }
+    summary:hover{
+      text-decoration:underline;
+    }
+    button[disabled]{
+      background:transparent;
+      color:black;
+      border:none;
+    }
+    button[disabled]::before{
+      content:"\002193";
+    }
+  </style>
+
+  <!--carrega llibreria vue-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head><body>
+
+<!--temporal navbar-->
+<nav>
+  TEMPORAL:
+  <a href="index.html">repos públics</a> |
+  <a href="itlab.html">remake itlab</a>
+</nav><br><br>
+
+<!--vue template-->
+<div id=app>
+  <!--titol-->
+  <div
+    style="
+      font-size:larger;
+      display:flex;
+      align-items:center;
+    "
+  >
+    <div>
+      <a href="https://github.com/icra" target="_blank">
+        <img
+          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          title="Go to ICRA's github"
+          style="height:50px"
+        >
+      </a>
+    </div>
+    <div>
+      <b>ICRA / Repositoris públics ({{repos.length}})</b>
+    </div>
+  </div>
+
+  <!--carregant-->
+  <div v-if="carregant" style="font-size:larger;font-weight:bold">
+    <img src="img/loading.gif" style="height:50px">
+    <div>carregant...</div>
+  </div>
+
+  <!--taula repositoris-->
+  <div v-if="carregant==false">
+    <table id=repos border=1 style="font-family:monospace">
+      <thead><tr>
+        <th><button :disabled="sorted_by=='name'"         @click="sort_repos_by('name')">nom</button></th>
+        <th>detalls</th>
+        <th><button :disabled="sorted_by=='updated'"      @click="sort_repos_by('updated')">actualitzat</button></th>
+        <th><button :disabled="sorted_by=='created'"      @click="sort_repos_by('created')">creat</button></th>
+        <th><button :disabled="sorted_by=='stars'"        @click="sort_repos_by('stars')">estrelles</button></th>
+        <th><button :disabled="sorted_by=='forks'"        @click="sort_repos_by('forks')">forks</button></th>
+        <th><button :disabled="sorted_by=='contributors'" @click="sort_repos_by('contributors')">contributors</button></th>
+      </tr></thead>
+
+      <tr v-for="repo in repos">
+        <td>
+          <a :href="repo.html_url" target="_blank">{{repo.full_name}}</a>
+        </td>
+        <td>
+          <details>
+            <summary>veure</summary>
+            <div style="padding:1em;background:#eee">{{repo.description}}</div>
+          </details>
+        </td>
+        <td :title="repo.updated_at">{{time_ago(repo.updated_at)}}</td>
+        <td :title="repo.created_at">{{time_ago(repo.created_at)}}</td>
+        <td>
+          <div
+            v-if="repo.stargazers_count"
+            style="display:flex;align-items:center;"
+          >
+            <svg height="16" width="16">
+              <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882
+              3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75
+              0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0
+              01-1.088-.79l.72-4.194L.818 6.374a.75.75 0
+              01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615
+              5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0
+              01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77
+              1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75
+              0 01-.564-.41L8 2.694v.001z"></path>
+            </svg>
+            <div>{{repo.stargazers_count}}</div>
+          </div>
+        </td>
+        <td>
+          <div
+            v-if="repo.forks_count"
+            style="display:flex;align-items:center;"
+          >
+            <svg height="16" width="16">
+              <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0
+              011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75
+              8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0
+              002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0
+              01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5
+              0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000
+              1.5z"></path>
+            </svg>
+            <div>{{repo.forks_count}}</div>
+          </div>
+        </td>
+        <td>
+          <div v-if="repo.contributors">
+            <details v-if="repo.contributors.length">
+              <summary>{{repo.contributors.length}}</summary>
+              <div>
+                <div v-for="con in repo.contributors">
+                  <a target="_blank" :href="con.html_url">
+                    {{con.login}}
+                  </a>
+                  ({{con.contributions}})
+                </div>
+              </div>
+            </details>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!--nota caducitat api-->
+  <p style="font-size:smaller">
+    <b>Nota</b>: l'accés a l'API de github caduca el "Wed, Feb 28 2024".  Quan
+    caduqui caldrà generar un nou token d'accés des de l'usuari admin d'icra.
+    Instruccions: "settings"/"developer settings"/"personal acces
+    tokens"/"fine-grained tokens".
+  </p>
+</div>
+
+<script>
+  let app=Vue.createApp({
+    data(){return{
+      repos:[],//array a omplir via fetch() api
+      sorted_by:"updated",//default sorting of repos
+      carregant:true,//indicador "loading..."
+    }},
+
+    methods:{
+      sort_repos_by(prop){
+        this.sorted_by=prop;
+        switch(prop){
+          case "stars":
+            this.repos.sort((a,b)=>{
+              return b.stargazers_count-a.stargazers_count;
+            });break;
+          case "forks":
+            this.repos.sort((a,b)=>{
+              return b.forks_count-a.forks_count;
+            });break;
+          case "contributors":
+            this.repos.sort((a,b)=>{
+              return b.contributors.length-a.contributors.length;
+            });break;
+          case "name":
+            this.repos.sort((a,b)=>{
+              return b.full_name.toUpperCase()<a.full_name.toUpperCase()?1:-1;
+            });break;
+          case "updated":
+            this.repos.sort((a,b)=>{
+              return b.updated_at<a.updated_at?-1:1;
+            });break;
+          case "created":
+            this.repos.sort((a,b)=>{
+              return b.created_at<a.created_at?-1:1;
+            });break;
+        }
+      },
+
+      //crea string indicant quant de temps ha passat
+      time_ago(date_str){
+        let ago = new Date(date_str);
+        let ara = new Date();
+
+        //milisegons
+        let millis = ara.getTime()-ago.getTime();
+
+        //segons
+        let segons = millis/1000;
+        if(segons<0)   return `Al futur`;
+        if(segons<=60) return `Ara mateix`;
+
+        //minuts
+        let minuts = Math.round(segons/60);
+        if(minuts==1)  return `Fa un minut`;
+        if(minuts<=60) return `Fa ${minuts} minuts`;
+
+        //hores
+        let hores = Math.round(minuts/60);
+        if(hores==1)  return `Fa una hora`;
+        if(hores<=24) return `Fa ${hores} hores`;
+
+        //dies
+        let dies = Math.round(hores/24);
+        if(dies==1) return `Ahir`;
+        if(dies<=7) return `Fa ${dies} dies`;
+
+        //setmanes
+        let setmanes = Math.round(dies/7);
+        if(setmanes==1) return `La setmana passada`;
+        if(setmanes<=4) return `Fa ${setmanes} setmanes`;
+
+        //mesos
+        let mesos = Math.round(dies/30.4375);
+        if(mesos==1)  return `El mes passat`;
+        if(mesos<=12) return `Fa ${mesos} mesos`;
+
+        //anys
+        let anys = Math.round(dies/365.25);
+        if(anys==1) return `L'any passat`;
+        else return `Fa ${anys} anys`;
+      },
+    },
+  }).mount("#app");
+</script>
+
+<script type=module>/*secció fetch api github*/
+  //headers per les fetch calls
+  //la clau no té permisos, només pot llegir repositoris públics
+  let headers={
+    "Accept":"application/vnd.github+json",
+    "Authorization":"Bearer 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",
+  };
+
+  //funció que llegeix repositoris github
+  function fetch_repos(page){
+    page=page||1;
+    fetch(
+      `https://api.github.com/orgs/icra/repos?page=${page}`,
+      {headers},
+    )
+    .then(r=>r.json())
+    .then(arr=>{
+      if(!arr.constructor==Array){
+        console.error({arr});
+        throw("error resposta api github");
+      }
+
+      if(arr.length==0){
+        app.carregant=false;
+        app.sort_repos_by(app.sorted_by);
+        return;
+      };
+
+      arr.forEach(repo=>{
+        app.repos.push(repo);
+
+        //llegeix contributors (async)
+        fetch(repo.contributors_url,{headers})
+        .then(r=>r.json())
+        .then(arr=>{
+          repo.contributors=arr;
+        });
+      });
+
+      //next page
+      fetch_repos(++page);
+    });
+  }
+  fetch_repos();
+</script>

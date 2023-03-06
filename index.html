@@ -1,0 +1,649 @@
+<!doctype html><html><head>
+  <meta charset=utf8>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ITLAB ICRA</title>
+
+  <!--libs
+  -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!--css general-->
+  <style>
+    body{
+      text-rendering:optimizeLegibility;
+      font-family:sans-serif;
+      --blau-icra:#00b8ef;
+      overflow-y:scroll;
+      line-height:1.5;
+    }
+    div#app{
+      max-width:1200px;
+      margin:auto;
+    }
+    summary{
+      cursor:pointer;
+    }
+    summary:hover{
+      text-decoration:underline;
+    }
+    img{
+      display:block;
+    }
+    a{
+      color:var(--blau-icra);
+      text-decoration:none;
+      cursor:pointer;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+    hr.orange{
+      border:none;
+      border-bottom:1px solid orange;
+      width:80%;
+    }
+    .gris{
+      color:#5c6a72;
+    }
+  </style>
+
+  <!--css llista esquerra-->
+  <style>
+    .left_list_item{
+      cursor:pointer;
+      font-size:smaller;
+      white-space:nowrap;
+    }
+    .left_list_item[current=true]{
+      color:var(--blau-icra);
+    }
+    .left_list_item:hover{
+      color:var(--blau-icra);
+      text-decoration:underline;
+    }
+  </style>
+
+  <!--css grid all apps-->
+  <style>
+    .grid_app_container{
+      /*
+      */
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+      grid-gap:1px;
+    }
+    .grid_item_app{
+      box-sizing:border-box;
+      border:2px solid #ccc;
+      padding:0 20px;
+      display:grid;
+      background:white;
+      /*
+      --h:450px;
+      height:var(--h);
+      width:calc(var(--h)*0.618);
+      */
+    }
+    .grid_item_app:hover{
+      border-color:var(--blau-icra);
+      cursor:pointer;
+      box-shadow:inset 0 0 10px var(--blau-icra);
+    }
+  </style>
+
+  <!--css app focus-->
+  <style>
+    div.carousel img{
+      width:100%;
+      border:1px solid #ccc;
+    }
+    div.carousel img:hover{
+      border-color:var(--blau-icra);
+    }
+  </style>
+</head><body>
+
+<!--vue template-->
+<div id=app style="display:flex;flex-wrap:nowrap;">
+  <!--left list-->
+  <div
+    style="
+      border-right:1px solid #ccc;
+      margin-right:8px;
+      padding-right:8px;
+    "
+  >
+    <div @click="clear_current_app()" style="cursor:pointer;margin-top:10px">
+      <img
+        src="img/icra-logo-en.843e73b3.png"
+        style="max-width:210px"
+        alt="ICRA logo"
+      >
+    </div>
+
+    <div style="margin-top:10px;">
+      <!--all apps-->
+      <div>
+        <div @click="clear_current_app()" style="cursor:pointer">
+          <b>FEATURED APPS &amp; TOOLS ({{repos.length}})</b>
+        </div>
+        <ul class=gris style="list-style:none;padding-left:10px;margin-top:10px">
+          <li
+            class="left_list_item"
+            v-for="repo in repos"
+            :current="current_app==repo"
+            @click="set_current_app(repo)"
+            v-html="repo.name"
+          ></li>
+        </ul>
+      </div>
+
+      <!--all contributors-->
+      <div>
+        <b>CONTRIBUTORS ({{Object.keys(all_people).length}})</b>
+        <div style="font-size:smaller">
+          Sort by
+          <b>/</b>
+          <span v-for="key in ['name','contributions']">
+            <a
+              @click="sort_people_by=key"
+              :style="{color:sort_people_by==key?'black':''}"
+              v-html="key"
+            ></a>
+            <b>/</b>
+          </span>
+        </div>
+        <ul
+          id=all_contributors
+          style="
+            list-style:none;
+            padding-left:10px;
+          "
+        >
+          <li v-for="arr,name in all_people">
+            <div style="white-space:nowrap;">{{name}} ({{arr.length}})</div>
+            <ul>
+              <li
+                v-for="repo in arr.map(per=>per.project)"
+                class="left_list_item gris"
+                :current="current_app==repo"
+                @click="set_current_app(repo)"
+                v-html="repo.name"
+              ></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div id="all_public_repos">
+        <b>ALL PUBLIC REPOS ({{public_repos_loading?"loading...":public_repos.length}})</b>
+        <div style="font-size:smaller">
+          Sort by
+          <b>/</b>
+          <span v-for="key in ['name','updated','created','stars','forks','contributors']">
+            <a
+              @click="sort_public_repos_by(key)"
+              v-html="key"
+              :style="{color:key==public_repos_sort_by?'black':''}"
+            ></a>
+            <b>/</b>
+          </span>
+        </div>
+        <ul>
+          <li v-for="repo in public_repos">
+            <div style="display:flex;">
+              <a :href="repo.html_url" target="_blank">{{repo.full_name}}</a>
+              <div v-if="repo.stargazers_count" style="display:flex;align-items:center;">
+                <svg height="16" width="16">
+                  <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882
+                  3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75
+                  0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0
+                  01-1.088-.79l.72-4.194L.818 6.374a.75.75 0
+                  01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615
+                  5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0
+                  01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77
+                  1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75
+                  0 01-.564-.41L8 2.694v.001z"></path>
+                </svg>
+                <div>{{repo.stargazers_count}}</div>
+              </div>
+
+              <div v-if="repo.forks_count" style="display:flex;align-items:center;">
+                <svg height="16" width="16">
+                  <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0
+                  011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75
+                  8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0
+                  002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0
+                  01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5
+                  0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000
+                  1.5z"></path>
+                </svg>
+                <div>{{repo.forks_count}}</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <b>NEW PROJECT</b>
+        <p class=gris>
+          Submit a Pull Request here:
+          <a href="//github.com/icra/itlab" target="_blank">icra/itlab</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--right part-->
+  <div style="width:100%">
+    <nav style="text-align:right" class=gris>
+      <a type="button" href="http://icra.cat/index.php?lang=3" target="_blank">ICRA homepage</a> |
+      <a type="button" href="https://github.com/icra" target="_blank">ICRA github</a>
+    </nav>
+
+    <!--all apps grid-->
+    <div v-if="!current_app">
+      <h1>ITLAB</h1>
+      <p class=gris
+        style="
+          border-bottom:2px solid var(--blau-icra);
+          padding-bottom:10px;
+          margin-bottom:10px;
+        "
+      >
+        ICRA's ITLAB is a catalog of the main IT solutions developed in
+        research and/or innovation projects with ICRA participation.
+
+        It provides a description of each of project and gives credit to the
+        researchers and computer engineers involved.
+
+        It allows accessing the solutions and, in some cases, the source code.
+
+        The ITLAB has been promoted by Dr. Lluís Corominas and Prof. Joaquim
+        Comas and it is maintained by the team of computer engineers involved
+        in the development of the IT solutions (Lluís Bosch, Adrià Riu, Josep
+        Pueyo &amp; Joan Saló).
+      </p>
+
+      <!--search box-->
+      <div style="background:#5a6870;padding:1em">
+        <input v-model="current_filter" placeholder="Search apps">
+        <button @click="current_filter=''" :disabled="current_filter==''">clear</button>
+
+        <details style="color:white" open>
+          <summary>Filters</summary>
+          <div>
+            {{all_filters}}
+          </div>
+        </details>
+      </div>
+
+      <!--grid with apps-->
+      <div class="grid_app_container" style="margin-top:5px">
+        <div
+          v-for="repo in get_repos"
+          class="grid_item_app"
+          @click="set_current_app(repo)"
+        >
+          <h3 style="text-align:center">{{repo.name}}</h3>
+          <div>
+            <img :src="`img/${repo.imageName}`"
+              alt="Image"
+              style="
+                width:100%;
+                max-width:150px;
+                margin:auto;
+              "
+            >
+          </div>
+          <p class=gris style="font-size:smaller;">
+            {{repo.shortDescription}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--current app details-->
+    <div v-if="current_app">
+      <!--navigation buttons-->
+      <div style="display:flex;">
+        <button title="Previous tool" style="width:75px" @click="current_app=repos[current_app_index-1]" :disabled="current_app_index<=0">&#9664;</button>
+        <button title="Next tool"     style="width:75px" @click="current_app=repos[current_app_index+1]" :disabled="current_app_index>=repos.length-1">&#9654;</button>
+      </div>
+
+      <!--logo and project name-->
+      <div style="
+        display:flex;
+        flex-wrap:no-wrap;
+        align-items:center;
+        background:#5a6870cc;
+        background:linear-gradient(to right,#5a6870,#5a6870cc);
+        color:white;
+        margin-top:3px;
+      ">
+        <div style="max-width:38.2%">
+          <img
+            :src="`img/${current_app.imageName}`"
+            style="
+              max-width:100%;
+              height:100px;
+              box-sizing:border-box;
+              border:1px solid #ccc;
+              background:white;
+              padding:10px;
+            "
+          >
+        </div>
+        <div style="
+          font-size:2em;
+          font-weight:bold;
+          padding:0 0.618em;
+          height:100px;
+          box-sizing:border-box;
+          display:flex;
+          align-items:center;
+        ">{{current_app.name}}</div>
+      </div>
+
+      <!--description-->
+      <div>
+        <p v-html="current_app.description"></p>
+        <hr class=orange>
+      </div>
+
+      <!--screenshots-->
+      <div v-if="current_app.otherImages && current_app.otherImages.length">
+        <div
+          class=carousel
+          style="
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
+            grid-gap:10px;
+          "
+        >
+          <div v-for="img in current_app.otherImages">
+            <a :href="`img/${img}`" target="_blank">
+              <img :src="`img/${img}`">
+            </a>
+          </div>
+        </div>
+        <hr class=orange>
+      </div>
+
+      <!--project details, funding-->
+      <div v-if="current_app.project">
+        <h3>Project</h3>
+        <p v-html="current_app.project"></p>
+        <hr class=orange>
+      </div>
+
+      <!--publications-->
+      <div v-if="current_app.publications.length">
+        <h3>Publications</h3>
+        <ul>
+          <li v-for="pub in current_app.publications">
+            <div>{{pub.authors}}</div>
+            <div><a :href="pub.link" target="_blank">{{pub.title}}</a></div>
+          </li>
+        </ul>
+        <hr class=orange>
+      </div>
+
+      <!--credits-->
+      <div>
+        <h3>Tool expert(s) &amp; Credits</h3>
+        <div
+          style="
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(33.33%,1fr));
+          "
+        >
+          <ul v-for="per in [...current_app.experts, ...current_app.credits]">
+            <li>
+              <div><b>{{per.name}}</b></div>
+              <div v-if="per.position" style="font-size:smaller">{{per.position}}</div>
+              <div v-if="per.email" style="display:flex;align-items:center">
+                <svg width="1em" height="1em"><g><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></g></svg>&nbsp;
+                <a :href="`mailto:${per.email}`" target="_blank">{{per.email}}</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <hr class=orange>
+      </div>
+
+      <!--links-->
+      <div v-if="current_app.toolLink || current_app.codeLink">
+        <h3>Links &amp; Downloads</h3>
+        <div v-if="current_app.toolLink">
+          <div>You can use, download or find more information about this tool on the following link:</div>
+          <ul style="margin-top:5px"><li>
+            <a :href="current_app.toolLink" target="_blank">{{current_app.toolLink}}</a>
+          </li></ul>
+        </div>
+
+        <div v-if="current_app.codeLink">
+          <div>Source code available on:</div>
+          <ul style="margin-top:5px"><li>
+            <a :href="current_app.codeLink" target="_blank">{{current_app.codeLink}}</a>
+          </li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--vue instance-->
+<script>
+  let app=Vue.createApp({
+    data(){return{
+      repos:[],
+      current_app:false,
+      //left list sorting
+      sort_people_by:"name",
+
+      //public repos
+      public_repos:[],
+      public_repos_loading:true,
+      public_repos_sort_by:"stars",
+
+      //filters for main page
+      current_filter:"",//filter by name
+      filters:{
+        "license type":[],
+        "functionality":[],
+        "topic":[],
+        "urban water cycle":[],
+      },
+    }},
+
+    methods:{
+      async set_current_app(repo, no_history_entry){
+        no_history_entry = no_history_entry||false;
+
+        this.current_app=repo;
+
+        //history manipulation
+        if(no_history_entry==false){
+          const url=new URL(window.location);
+          url.searchParams.set("app",repo.name);
+          window.history.pushState({app_name:repo.name},"",url);
+        }
+
+        //fake scroll
+        await this.$nextTick();
+        window.scroll(0,0);
+      },
+
+      clear_current_app(){
+        this.current_app=false;
+
+        //history manipulation
+        const url=new URL(window.location);
+        url.searchParams.delete("app");
+        window.history.pushState({},"",url);
+      },
+
+      set_current_app_onload(){
+        const url = new URL(window.location);
+        let app_name = url.searchParams.get("app");
+        if(!app_name) return;
+        let repo = this.repos.find(r=>r.name==app_name);
+        if(!repo) return;
+        this.set_current_app(repo,true);
+      },
+
+      sort_public_repos_by(prop){
+        this.public_repos_sort_by=prop;
+        let repos = this.public_repos;
+        switch(prop){
+          case "stars":
+            repos.sort((a,b)=>{
+              return b.stargazers_count-a.stargazers_count;
+            });break;
+          case "forks":
+            repos.sort((a,b)=>{
+              return b.forks_count-a.forks_count;
+            });break;
+          case "contributors":
+            repos.sort((a,b)=>{
+              return b.contributors.length-a.contributors.length;
+            });break;
+          case "name":
+            repos.sort((a,b)=>{
+              return b.full_name.toUpperCase()<a.full_name.toUpperCase()?1:-1;
+            });break;
+          case "updated":
+            repos.sort((a,b)=>{
+              return b.updated_at<a.updated_at?-1:1;
+            });break;
+          case "created":
+            repos.sort((a,b)=>{
+              return b.created_at<a.created_at?-1:1;
+            });break;
+        }
+      },
+    },
+
+    computed:{
+      get_repos(){
+        let filter = this.current_filter;
+        if(!filter) return this.repos;
+        return this.repos.filter(r=>r.name.toLowerCase().includes(filter));
+      },
+
+      current_app_index(){
+        if(!this.current_app) return -1;
+        return this.repos.indexOf(this.current_app);
+      },
+
+      all_people(){
+        let dict={};
+        this.repos.forEach(repo=>{
+          [...repo.experts, ...repo.credits].forEach(person=>{
+            if(!dict[person.name]){
+              dict[person.name]=[];
+            }
+            person.project=repo;
+            dict[person.name].push(person);
+          });
+        });
+
+        //sort dict here
+        let retval={};
+        let keys=Object.keys(dict);
+
+        if(this.sort_people_by=="name"){
+          keys.sort();
+        }if(this.sort_people_by=="contributions"){
+          keys.sort((a,b)=>{
+            return dict[b].length-dict[a].length;
+          });
+        }
+        keys.forEach(key=>{
+          retval[key]=dict[key];
+        });
+        return retval;
+      },
+
+      all_filters(){
+        let dict={};
+        return this.repos.forEach(repo=>{
+          Object.keys(repo.filters).forEach(key=>{
+            if(!dict[key]) dict[key]={};
+            //Obj
+          });
+        });
+        return dict;
+      },
+    },
+
+  }).mount("#app");
+
+  fetch("apps.json").then(r=>r.json()).then(arr=>{
+    app.repos=arr;
+    app.set_current_app_onload();
+  });
+
+  /*history press back buttons*/
+  window.onpopstate=function(event){
+    if(!event){return}
+    if(!event.state){return}
+    if(!event.state.app_name){return}
+
+    let repo = app.repos.find(r=>r.name==event.state.app_name);
+    if(!repo) return;
+    console.log(repo);
+    app.set_current_app(repo,true);
+  }
+</script>
+
+<script type=module>/*secció fetch api github*/
+  //headers per les fetch calls
+  //la clau no té permisos, només pot llegir repositoris públics
+  let headers={
+    "Accept":"application/vnd.github+json",
+    "Authorization":"Bearer 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",
+  };
+
+  //funció que llegeix repositoris github
+  function fetch_repos(page){
+    page=page||1;
+    fetch(
+      `https://api.github.com/orgs/icra/repos?page=${page}`,
+      {headers},
+    )
+    .then(r=>r.json())
+    .then(arr=>{
+      if(!arr.constructor==Array){
+        console.error({arr});
+        throw("error resposta api github");
+      }
+
+      //end recursive call
+      if(arr.length==0){
+        //sort repos
+        app.sort_public_repos_by(app.public_repos_sort_by);
+        app.public_repos_loading=false;
+        return;
+      };
+
+      arr.forEach(repo=>{
+        app.public_repos.push(repo);
+
+        //llegeix contributors (async)
+        fetch(repo.contributors_url,{headers})
+        .then(r=>r.json())
+        .then(arr=>{
+          repo.contributors=arr;
+        });
+      });
+
+      //next page
+      fetch_repos(++page);
+    });
+  }
+  fetch_repos();
+</script>
