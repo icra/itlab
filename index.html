@@ -278,10 +278,10 @@
       <div style="background:#5a6870;padding:1em">
         <input v-model="current_filter" placeholder="Search apps">
         <button @click="current_filter=''" :disabled="current_filter==''">clear</button>
-
-        <details style="color:white" open>
+        <details style="color:white" open v-if="false">
           <summary>Filters</summary>
           <div>
+            TODO
             {{all_filters}}
           </div>
         </details>
