@@ -11,11 +11,10 @@
         "link":"https://link.springer.com/article/10.1007/s10661-018-6589-3"
       }
     ],
-    "experts":[
+    "credits":[
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
-    "credits":[],
     "imageName":"logo_icra.png",
     "otherImages":["csodetectionalgorithm/fig01.png", "csodetectionalgorithm/fig02.png", "csodetectionalgorithm/fig03.png", "csodetectionalgorithm/fig04.png"],
     "toolLink":"https://cso-detection-algorithm.icradev.cat/",
@@ -31,10 +30,8 @@
     "description":"The ECAM tool is designed for assessing the carbon emissions and energy consumption of the urban water cycle that are within the operational boundaries of water and wastewater utilities and prepare these utilities for future reporting needs on climate mitigation.",
     "project":"Members of the WaCCliM Taskforce and WaCCliM Expert pool for their voluntary contribution, providing scientific input and peer-review of ECAM. REaCH project (CTM2015-66892-R (MINECO/FEDER, UE), funded by the Spanish Ministry of Economy and Competitiveness and FEDER, for their support to ICRA. Technical support by Komptenzzentrum Wasser Berlin gGmbH.",
     "publications":[],
-    "experts":[
-      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"}
-    ],
     "credits":[
+      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
     "imageName":"ecam/logo-notext.jpg",
@@ -55,13 +52,11 @@
     "description":"Web platform to run simulations. It allows creating a network of wastewater treatment plants and rivers and simulate the concentration of different contaminants, for instance phosphates and nitrates, at every point of the network so the operators can adapt the treatment conditions of the plant and meet discharge limits and river quality limits by law.\n It is an integration of: <ul><li>uct-icra model (wastewater treatment plant model, implemented by ICRA, based on academic literature from G. Ekama, from University of Cape Town) </li><li>icra river model (set of equations by V. Acuña, ICRA researcher)</li><li> energy consumption module (set of equations by L. Corominas, ICRA researcher)</ul> All backend modules are independent. They are integrated and presented in a web interface in this project.",
     "project":"Eco-Advisor for Wise Leading Water Management, funded by Global Omnium & Aigües de Catalunya",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Laura Castañares", "position":"Research technician", "email":"lcastanares@icra.cat"},
       {"name":"Vicenç Acuña", "position":"Research scientist", "email":"vacuna@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
-      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"}
-    ],
-    "credits":[
+      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
     "imageName":"ecoadvisor/logo.jpg",
@@ -82,12 +77,11 @@
     "description":"The second leg of the EdiCitNet toolbox is the Edible City Game, a multiplayer serious game designed to showcase the co-benefits of Edible City Solutions. The game is a participatory urban planning process where twelve different ECS can be implemented by the players as long as they respect the normative and do not exceed their budgets. The available ECS combine different aims (communitarian or professional), technologies (soil-based or hydroponic), different locations (on the ground or rooftop) and different yields (vegetables or fruit trees). To explore the impact of these twelve ECS, 8 indicators are calculated: heat island effect; water management; green accessibility; public participation; green economy; food sovereignty; green justice. Competing with the implementation of ECS, the players can also construct social housing to avoid gentrification and install solar panels to increase the production of renewable energies in the city. The players can choose among eight different characters to play with, each character corresponds to a specific stakeholder with different interests in the city: municipality; neighbours\u2019 association; SME organization; educational sector; consumers\u2019 cooperative; social sector; conservationist NGO and tourism promotion agency. During the game, the players interact among them by buying and selling plots, granting permissions, or requesting subsidies.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher", "email":"jpueyo@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"}
     ],
-    "credits":[],
     "imageName":"edicitnet/edicitnet.jpg",
     "otherImages":["edibleCityGame/GUI_01.png", "edibleCityGame/GUI_02.png", "edibleCityGame/GUI_03.png", "edibleCityGame/GUI_04.png", "edibleCityGame/GUI_05.png"],
     "toolLink":"",
@@ -112,10 +106,9 @@
         "link":"https://linkinghub.elsevier.com/retrieve/pii/S004896972101305X"
       }
     ],
-    "experts":[
+    "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher/Main developer", "email":"jpueyo@icra.cat"}
     ],
-    "credits":[],
     "imageName":"18/edicitnet.jpg",
     "otherImages":["18/indicators.png", "18/results_plot.png"],
     "toolLink":"",
@@ -134,15 +127,13 @@
     "description":"The systemic use of urban landscapes for food production is a major step towards more sustainable, liveable and healthier cities. A multitude of initiatives around the World, however fragmented, are prospering, forming a global movement of Edible Cities. Their products, activities and services - the Edible City Solutions (ECS) - empower local communities to overcome social problems by their inclusive and participatory dynamics and to create new green businesses and jobs, and thereby generating local economic growth and fostering social cohesion.\n\nEdiCitNet will leverage the substantial benefits that ECS effect today at local level and catalyse their replication EU- and world-wide by launching a fully open and participatory network of cities, empowering their inhabitants by a common methodology\n\na) to systematically explore the wealth and diversity of existing ECS,\n\nb) to adapt, plan and implement successfully proven ECS in their specific urban context.\n\nTo make this happen, EdiCitNet will close knowledge gaps in the effective implementation of ECS and their transformation into sustainable, innovative business models. This new insight will feed into a openly shared and globally accessible knowledge base and methodology to enable sustainable and evidence-based integration of ECS into the long-term urban planning of cities covering a large spectrum of urban, climatic, social, environmental and cultural contexts.\n\n5 Front Runner Cities (FRC), supported by a highly interdisciplinary consortium of city authorities, SME, NGOs and academia, will demonstrate their unique experience with own Living Labs and transfer their knowledge to 7 dedicated Follower Cities (FC), determined to replicate ECS for the benefit of their inhabitants. The carefully selected group of FRC and FC allows to study and monitor implementation in large variety of environments and also ensures truly global outreach with city partners based in Central America, Africa and East Asia.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Joana Castellar", "position":"Postdoc Researcher", "email":"jcastellar@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
-      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"}
-    ],
-    "credits":[
-      {"name":"Adrià Riu", "position":"Main developer"},
-      {"name":"Joan Saló", "position":"Tool developer"},
-      {"name":"Roser Brugués", "position":"Tool developer"},
+      {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
+      {"name":"Adrià Riu", "position":"Main developer", "email":"ariu@icra.cat"},
+      {"name":"Joan Saló", "position":"Tool developer", "email":"jsalo@icra.cat"},
+      {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"},
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher", "email":"jpueyo@icra.cat"}
     ],
     "imageName":"edicitnet/edicitnet.jpg",
@@ -163,14 +154,12 @@
     "description":"<b>GESTOR</b> is a new management tool, being designed and under development, to upgrade current sewer-asset-management putting special emphasis on three specific issues: 1) <i>online low-cost detection of combined sewer overflows</i>, 2) <i>Infiltration and exfiltration due to malfunction-leak of sewer pipes </i> 3) <i> lifespan reduction and collapse due to induced corrosion generated by exposition to sulfide </i>. <b>GESTOR</b> combines extensive monitoring campaigns of relevant data, modelling tools (such as SWMM) coupled to advanced decision support systems and lifecycle assessment techniques. The development of the tool has been carried out in the sewer system of Peñíscola (Spain).",
     "project":"GESTOR, Desarrollo de una herramienta avanzada de Gestión preventiva y para la Eficiencia de recursos hídricos en infraestructuras de SaneamienTO uRbano",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Oriol Gutiérrez", "position":"Postdoc researcher", "email":"ogutierrez@icra.cat"},
-      {"name":"Sílvia Busquets", "position":"Research Technician", "email":"sbusquets@icra.cat"}
-    ],
-    "credits":[
-      {"name":"Adrià Riu", "position":"Main developer of the map viewer", "email":""},
-      {"name":"Lluís Bosch", "position":"Main developer of the data communication protocols", "email":""}
+      {"name":"Sílvia Busquets", "position":"Research Technician", "email":"sbusquets@icra.cat"},
+      {"name":"Adrià Riu", "position":"Main developer of the map viewer", "email":"ariu@icra.cat"},
+      {"name":"Lluís Bosch", "position":"Main developer of the data communication protocols", "email":"lbosch@icra.cat"}
     ],
     "imageName":"16/gestor.jpg",
     "otherImages":["16/1489066181.jpg"],
@@ -201,12 +190,11 @@
         "link":"https://doi.org/10.1016/j.envint.2020.105993"
       }
     ],
-    "experts":[
+    "credits":[
       {"name":"Carme Font", "position":"Research technician", "email":"cfont@icra.cat"},
       {"name":"Rafael Marcé", "position":"Research scientist", "email":"rmarce@icra.cat"},
       {"name":"Vicenç Acuña", "position":"Research scientist", "email":"vacuna@icra.cat"}
     ],
-    "credits":[],
     "imageName":"logo_icra.png",
     "otherImages":["globalfate/fig01.png","globalfate/fig02.png","globalfate/fig03.png","globalfate/fig04.png","globalfate/fig05.png","globalfate/fig06.png"],
     "toolLink":"",
@@ -231,10 +219,8 @@
         "link":"https://bg.copernicus.org/preprints/bg-2020-307/"
       }
     ],
-    "experts":[
-      {"name":"Rafael Marcé","position":"Research scientist","email":"rmarce@icra.cat"}
-    ],
     "credits":[
+      {"name":"Rafael Marcé","position":"Research scientist","email":"rmarce@icra.cat"},
       {"name":"Jihyeon Kim","position":"Université du Québec à Montréal - UQAM"},
       {"name":"Yves T. Prairie","position":"Université du Québec à Montréal - UQAM"}
     ],
@@ -256,10 +242,9 @@
     "description":"A plugin to store all QGIS processing algorithms developed by ICRA's researchers. It currently contains:\n<ul>\n<li>Buildings2sewer: algortihm to connect each building of a city to its closest lower manhole.\n</ul>",
     "project":"",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Josep Pueyo-Ros","position":"Postdoc researcher","email":"jpueyo@icra.cat"}
     ],
-    "credits":[],
     "imageName":"17/main_logo.png",
     "otherImages":["17/Captura de pantalla 2021-07-20 145944.png"],
     "toolLink":"https://plugins.qgis.org/plugins/ICRA/",
@@ -278,12 +263,10 @@
     "description":"MBR is a web-based app that writes and reads a database based on sensors linked to a PLC. The \"supervisor\" model is continuously reading the PLC and feeding the database.",
     "project":"",
     "publications":[],
-    "experts":[
-      {"name":"Ignasi Rodríguez-Roda", "position":"Research Professor", "email":"irodriguezroda@icra.cat"},
-      {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"}
-    ],
     "credits":[
-      {"name":"Lluís Bosch", "position":"Main developer"}
+      {"name":"Ignasi Rodríguez-Roda", "position":"Research Professor", "email":"irodriguezroda@icra.cat"},
+      {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
+      {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
     "imageName":"logo_icra.png",
     "otherImages":["MBR/fig01.png"],
@@ -308,11 +291,10 @@
         "title":"Nature-based Solutions in the urban context. Terminology, classification, and scoring for urban challenges and ecosystem services",
         "link":""}
       ],
-    "experts":[
+    "credits":[
       {"name":"Joana Castellar", "position":"Postdoc Researcher", "email":"jcastellar@icra.cat"},
       {"name":"Josep Pueyo-Ros", "position":"Postdoc Researcher", "email":"jpueyo@icra.cat"}
     ],
-    "credits":[],
     "imageName":"edicitnet/edicitnet.jpg",
     "otherImages":["nbs-list/fig01.png","nbs-list/fig02.png"],
     "toolLink":"https://icra.shinyapps.io/nbs-list/",
@@ -331,23 +313,20 @@
     "description":"REaCHGuideline includes a list of state-of-the art methods and tools for monitoring, modelling and mitigate greenhouse gas emissions. We will guide you in the selection of the tools based on your particular interests/needs: <ul><li>Inventory of direct emissions</li><li>Inventory of indirect emissions (life cycle assessment)</li><li>Modelling</li><li>Mitigation</li></ul>",
     "project":"Resilience of urban wastewater systems to emerging challenges: from fundamental understanding to improved management practices. Ref: CTM2015-66892-R",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Lluís Corominas", "position":"Research Scientist", "email":"lcorominas@icra.cat"},
       {"name":"Maite Pijuan", "position":"Research Scientist", "email":"mpijuan@icra.cat"}
     ],
-    "credits":[],
     "imageName":"14/Captura de pantalla 2021-04-23 172642.png",
     "otherImages":["14/Captura de pantalla 2021-04-23 121202.png"],
     "toolLink":"https://reach.icra.cat/",
     "codeLink":"",
-    "filters":{"license type":["public"],
-      "functionality":["decision support",
-      "modelling",
-      "control",
-      "selection"],
+    "filters":{
+      "license type":["public"],
+      "functionality":["decision support", "modelling", "control", "selection"],
       "topic":["GHG"],
-      "urban water cycle":["treatment"]},
-    "id":14
+      "urban water cycle":["treatment"]
+    }
   },
 
   {
@@ -356,15 +335,13 @@
     "description":"The <b>household water treatment</b> (HWT) <b>decision support system</b> (DSS) of the Water and Sanitation Emergency Response Unit from the Spanish Red Cross is a tool to provide decision support when choosing technologies to treat drinking water at household level in emergency situations.\n\nThe tool calculates a performance score for each technology based on 10 criteria for the given <b>scenario characteristics</b> and the <b>intrinsic criteria</b>. It also considers the need for residual protection.\n\nAll technologies are then presented and scored and their performance is detailed. The user can view supplementary information about the technology, such as the number of people served per unit, water throughput, lifetime, safe water storage capacity, standalone technology, water source, availability on the local market, CAPEX and cost per m3, size and weight. A bar plot is displayed with the performance of the technology against the following intrinsic criteria: WHO performance target, maintenance, instantaneous water supply, power requirements, easiness of use, taste alteration, waste generation.",
     "project":"",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Ignasi Rodríguez-Roda", "position":"Research Professor", "email":"irodriguezroda@icra.cat"},
       {"name":"Miriam Bergqvist", "position":"Master student ETH", "email":"miriambe@student.ethz.ch"},
-      {"name":"Ana Costales Plaza", "position":"Red Cross Coordinator", "email":"anaco@cruzroja.es"}
-    ],
-    "credits":[
-      {"name":"Joan Saló", "position":"Tool developer", "email":""},
-      {"name":"Roser Brugués", "position":"Tool developer", "email":""}
+      {"name":"Ana Costales Plaza", "position":"Red Cross Coordinator", "email":"anaco@cruzroja.es"},
+      {"name":"Joan Saló", "position":"Tool developer", "email":"jsalo@icra.cat"},
+      {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"}
     ],
     "imageName":"15/Red-Cross.png",
     "otherImages":["15/Captura de pantalla 2021-04-23 173124.png", "15/Captura de pantalla 2021-04-23 173226.png"],
@@ -384,12 +361,10 @@
     "description":"REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.<br/>REMapp is useful for membrane users who are going to replace membranes and are seeking alternative end-of-life membrane managements.\n\nThe preferable order regarding the potential kind of end-of-life membrane managements is: reuse, regeneration for reuse, direct recycling, indirect recycling, incineration and landfill disposal. Worldwide the most common management is incineration and landfill disposal (by far). REMapp shows current investigations and companies that try to boost alternative end-of-life membrane managements to those two last.\n\nThis decision-making tree has been developed by LEQUIA research group of University of Girona in collaboration with the University of New South Wales.",
     "project":"The authors acknowledge the financial support of the European Union's Horizon 2020 research and innovation programme under the Marie Sk\u0142odowska-Curie grant agreement num 712949 (TECNIOspring PLUS) and to the Agency for Business Competitiveness of the Government of Catalonia for the grant TECSPR17-1-0019 Mem2.0 project.",
     "publications":[],
-    "experts":[
-      {"name":"Raquel Garcia", "position":"Researcher", "email":"raquel.garcia@udg.edu"}
-    ],
     "credits":[
-      {"name":"Joan Saló", "position":"Tool developer"},
-      {"name":"Roser Brugués", "position":"Tool developer"}
+      {"name":"Raquel Garcia", "position":"Researcher", "email":"raquel.garcia@udg.edu"},
+      {"name":"Joan Saló", "position":"Tool developer", "email":"jsalo@icra.cat"},
+      {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"}
     ],
     "imageName":"remapp/logo_mem.png",
     "otherImages":["remapp/app_1.png","remapp/app_2.png","remapp/app_3.png","remapp/remapp.jpg"],
@@ -414,8 +389,6 @@
         "title":"The Catalan Surveillance Network of SARS-CoV-2 in Sewage: design, implementation, and performance",
         "link":"https://www.nature.com/articles/s41598-022-20957-3"
       }
-    ],
-    "experts":[
     ],
     "credits":[
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
@@ -443,13 +416,11 @@
     "description":"A tool to search the best nature-based technology for water sanitation",
     "project":"SNAPP. Science for Nature and People partnership. Funded by The Nature Conservancy, Wildlife Conservation Society and NCEAS.",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Vicenç Acuña", "position":"Research Scientist", "email":"vacuna@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
-      {"name":"Lluís Corominas", "position":"Research Scientist", "email":"lcorominas@icra.cat"}
-    ],
-    "credits":[
-      {"name":"Adrià Riu", "position":"Main developer", "email":""}
+      {"name":"Lluís Corominas", "position":"Research Scientist", "email":"lcorominas@icra.cat"},
+      {"name":"Adrià Riu", "position":"Main developer", "email":"ariu@icra.cat"}
     ],
     "imageName":"13/1519863775098.png",
     "otherImages":["13/Captura de pantalla 2021-04-23 141208.png", "13/Captura de pantalla 2021-04-23 173403.png", "13/Captura de pantalla 2021-04-23 173442.png"],
@@ -469,12 +440,10 @@
     "description":"Web platform to read data from online sensors installed in the sewer systems which communicates via LoRawan gateway. Online sensors measure temperature values of the sewer system. The combination of these values permits to evaluate when a combined sewer overflow is produced through CSO detection algorithm (patented by ICRA)",
     "project":"GESTOR, Desarrollo de una herramienta avanzada de Gestión preventiva y para la Eficiencia de recursos hídricos en infraestructuras de SaneamienTO uRbano",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Sílvia Busquets", "position":"Research technician", "email":"sbusquets@icra.cat"},
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
-      {"name":"Oriol Gutiérrez", "position":"Postdoc researcher", "email":"ogutierrez@icra.cat"}
-    ],
-    "credits":[
+      {"name":"Oriol Gutiérrez", "position":"Postdoc researcher", "email":"ogutierrez@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer","email":"lbosch@icra.cat"}
     ],
     "imageName":"wanesy/gestor.jpg",
@@ -495,11 +464,9 @@
     "description":"The WATExR project aims to deliver a series of environmental and ecological seasonal forecasting tools to the water sector. The tools will employ a variety of under-the-hood lake, catchment and fish phenology models to provide stakeholders (e.g., reservoir managers/educators/fish stock assessors) with predictions of aquatic phenomena at a seasonal time-scale. Using the tools, stakeholders will have access to probabilistic aquatic forecasts driven by state-of-the-art seasonal climate projections. The tools will update monthly and provide an indication of the expected average environmental conditions during the impending 3 to 9 months relative to the average conditions experienced during the most recent climate period. In so doing, the water sector will join the growing list of environmental sectors for which seasonal climate forecasts are showing strong potential to inform management.\n \nThe WATExR project (watexr.eu) offers tools to connect the available climatic forecasting/prediction systems on global spatial scales to impact variables in lakes and reservoirs on local or regional scales. However, this is not a trivial task, mainly because of the nature of the climatic data which required an uncertainty analysis (probabilistic approach) and the complex preprocessing and postprocessing needed to apply climatic global data to real problems in local or regional scales. All together, limits the understanding and applicability to expert users. Our project comes up with a solution to build the bridge needed between climatic forecast/predictions and day-to-day water quality problems.  \n",
     "project":"WATExR: Integration of climate seasonal prediction and ecosystem impact modelling for an efficient adaptation of water resources management to increasing climate extreme events. Agencia Estatal de Investigación (AEI) - Ministerio de Economía, Industria y Competitividad (MINECO); Código: PCIN-2017-062/AEI",
     "publications":[],
-    "experts":[
-      {"name":"Rafael Marcé","position":"Research scientist","email":"rmarce@icra.cat"}
-    ],
     "credits":[
-      {"name":"Daniel Mercado-bettín","position":"Postdoc Researcher"}
+      {"name":"Rafael Marcé","position":"Research scientist","email":"rmarce@icra.cat"},
+      {"name":"Daniel Mercado-bettín","position":"Postdoc Researcher","email":"dmercado@icra.cat"}
     ],
     "imageName":"watexr/logo.png",
     "otherImages":["watexr/fig01.jpg"],
@@ -519,17 +486,15 @@
     "description":"wOtter is an open-source, rapid and user-friendly model that may be used to predict wastewater contamination in river networks of Europe. A full simulation of the model requires 25 seconds, although this number may be brought down using a different simulation method.  wOtter processes data on sanitation, on rivers and on lakes. In the wastewater part, the data is transformed such that a data frame (excel file) is obtained, which contains the information on the size of the discharge (in person equivalents), the treatment and the point of entry to the river. In the part on rivers, a shapefile of rivers is converted to a graph object, which contains information on the river flow directions, the discharge and residence times. In case a section of a river is identified as a lake, the residence time for the nodes in the graph are replaced by a residence time calculation specifically for lakes. When the data on wastewater, rivers and lakes is processed, the model may be implemented by entering the contamination from discharges and propagating it through the river network, taking into account attenuation.\nThe information on the river network in Europe comes from the HydroSHEDS database. This database uses the waterGAP model and satellite imagery to derive discharges of rivers. The river locations and discharges were taken at a resolution of 15 arc seconds. The data on contamination in Europe originates from two sources. The first source is the UWWTD database which contains information on treatment plants in Europe. For a particular treatment plant, it gives the load in person equivalents and it gives the treatment type at the plant. The database is supplemented with the WASH (water, sanitation, and hygiene) database, which gives nationwide statistics on wastewater treatment or lack thereof. This allows for the inclusion of non-treatment plant wastewater sources, as well as for a correction of the treated person equivalents reported in the UWWTD database. The data used for the calibration and validation of the model come from Wilkinson et. al. (2022). This paper contained information on 61 pharmaceuticals in 1052 sampling sites. Of those 1052 sampling sites, 320 fell within the scope of our study. ",
     "project":"INVEST project funded the development of the wOtter model. RTI2018-097471-B-C21, from the call \"2018 de Proyectos I+D+i - Retos Investigación 2018\". ",
     "publications":[],
-    "experts":[
+    "credits":[
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Morgan Abily", "position":"Research technician", "email":"mabily@icra.cat"},
       {"name":"Wolfgang Gernjak", "position":"Research professor (ICREA)", "email":"wgernjak@icra.cat"},
       {"name":"Ignasi Rodríguez-Roda", "position":"Research Professor", "email":"irodriguezroda@icra.cat"},
-      {"name":"Manel Poch", "position":"Research Professor", "email":"manuel.poch@udg.edu"}
-    ],
-    "credits":[
-      {"name":"Janick Klink", "position":"Research technician", "email":""},
-      {"name":"Laura Aixalà", "position":"Research technician", "email":""},
-      {"name":"Joan Saló", "position":"Research technician", "email":""}
+      {"name":"Manel Poch", "position":"Research Professor", "email":"manuel.poch@udg.edu"},
+      {"name":"Janick Klink", "position":"Research technician", "email":"jklink@icra.cat"},
+      {"name":"Laura Aixalà", "position":"Research technician", "email":"laixala@icra.cat"},
+      {"name":"Joan Saló", "position":"Research technician", "email":"jsalo@icra.cat"}
     ],
     "imageName":"19/wOtterscheme.png",
     "otherImages":[],

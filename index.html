@@ -401,14 +401,14 @@
 
       <!--credits-->
       <div>
-        <h3>Tool expert(s) &amp; Credits</h3>
+        <h3>Credits</h3>
         <div
           style="
             display:grid;
             grid-template-columns:repeat(auto-fill,minmax(33.33%,1fr));
           "
         >
-          <ul v-for="per in [...current_app.experts, ...current_app.credits]">
+          <ul v-for="per in current_app.credits">
             <li>
               <div><b>{{per.name}}</b></div>
               <div v-if="per.position" style="font-size:smaller">{{per.position}}</div>
@@ -550,7 +550,7 @@
       all_people(){
         let dict={};
         this.repos.forEach(repo=>{
-          [...repo.experts, ...repo.credits].forEach(person=>{
+          repo.credits.forEach(person=>{
             if(!dict[person.name]){
               dict[person.name]=[];
             }
