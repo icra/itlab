@@ -245,8 +245,9 @@
   <!--right part-->
   <div style="width:100%">
     <nav style="text-align:right" class=gris>
-      <a type="button" href="http://icra.cat/index.php?lang=3" target="_blank">ICRA homepage</a> |
-      <a type="button" href="https://github.com/icra" target="_blank">ICRA github</a>
+      <a href="http://icra.cat/index.php?lang=3" target="_blank">ICRA homepage</a> |
+      <a href="https://github.com/icra" target="_blank">ICRA github</a> |
+      <a href="all_public_repos.html" target="_blank">All public repos</a>
     </nav>
 
     <!--all apps grid-->
@@ -594,7 +595,7 @@
     app.set_current_app_onload();
   });
 
-  /*history press back buttons*/
+  /*history press back button*/
   window.onpopstate=function(event){
     if(!event){return}
     if(!event.state){return}
@@ -607,14 +608,8 @@
   }
 </script>
 
+<script src="access_token.js"></script>
 <script type=module>/*secció fetch api github*/
-  //headers per les fetch calls
-  //la clau no té permisos, només pot llegir repositoris públics
-  let headers={
-    "Accept":"application/vnd.github+json",
-    "Authorization":"Bearer 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",
-  };
-
   //funció que llegeix repositoris github
   function fetch_repos(page){
     page=page||1;

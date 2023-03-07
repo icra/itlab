@@ -30,36 +30,13 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head><body>
 
-<!--temporal navbar-->
-<nav>
-  TEMPORAL:
-  <a href="index.html">repos públics</a> |
-  <a href="itlab.html">remake itlab</a>
-</nav><br><br>
-
 <!--vue template-->
 <div id=app>
   <!--titol-->
-  <div
-    style="
-      font-size:larger;
-      display:flex;
-      align-items:center;
-    "
-  >
-    <div>
-      <a href="https://github.com/icra" target="_blank">
-        <img
-          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-          title="Go to ICRA's github"
-          style="height:50px"
-        >
-      </a>
-    </div>
-    <div>
-      <b>ICRA / Repositoris públics ({{repos.length}})</b>
-    </div>
-  </div>
+  <h1>
+    <a href="index.html">Inici</a> /
+    <span>Repositoris públics ({{repos.length}})</span>
+  </h1>
 
   <!--carregant-->
   <div v-if="carregant" style="font-size:larger;font-weight:bold">
@@ -242,14 +219,8 @@
   }).mount("#app");
 </script>
 
+<script src="access_token.js"></script>
 <script type=module>/*secció fetch api github*/
-  //headers per les fetch calls
-  //la clau no té permisos, només pot llegir repositoris públics
-  let headers={
-    "Accept":"application/vnd.github+json",
-    "Authorization":"Bearer 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",
-  };
-
   //funció que llegeix repositoris github
   function fetch_repos(page){
     page=page||1;
