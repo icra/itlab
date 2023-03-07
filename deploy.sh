@@ -8,9 +8,8 @@ git push
 #desplega al servidor
 #ssh root@icra.loading.net "cd /var/www/vhosts/icra.cat/itlab.icra.cat/itlab; git pull"
 
-#servidor
-servidor='icra.loading.net'
 #ruta carpeta servidor
+servidor='icra.loading.net'
 carpeta="/var/www/vhosts/icra.cat/itlab.icra.cat/itlab"
 
 #rsync
