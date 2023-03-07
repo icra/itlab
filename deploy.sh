@@ -11,7 +11,7 @@ git push
 #servidor
 servidor='icra.loading.net'
 #ruta carpeta servidor
-carpeta="/var/www/vhosts/icra.cat/itlab.icra.cat"
+carpeta="/var/www/vhosts/icra.cat/itlab.icra.cat/itlab"
 
 #rsync
 # -h human readable format
