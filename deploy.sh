@@ -9,10 +9,13 @@ git push
 #ssh root@icra.loading.net "cd /var/www/vhosts/icra.cat/itlab.icra.cat/itlab; git pull"
 
 #servidor
-servidor='icra.loading.net' #loading
+servidor='icra.loading.net'
 #ruta carpeta servidor
 carpeta="/var/www/vhosts/icra.cat/itlab.icra.cat"
 
-#exclou base de dades
-#exclou ruta de la base de dades
-rsync -hvr . root@$servidor:$carpeta
+#rsync
+# -h human readable format
+# -P mostra progrés
+# -v incrementa verbositat
+# -r actua recursivament
+rsync -hPvr . root@$servidor:$carpeta
