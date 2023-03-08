@@ -15,12 +15,20 @@
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
-    "imageName":"logo_icra.png",
-    "otherImages":["csodetectionalgorithm/fig01.png", "csodetectionalgorithm/fig02.png", "csodetectionalgorithm/fig03.png", "csodetectionalgorithm/fig04.png"],
+    "imageName":"img/logo_icra.png",
+    "otherImages":[
+      "img/csodetectionalgorithm/fig01.png",
+      "img/csodetectionalgorithm/fig02.png",
+      "img/csodetectionalgorithm/fig03.png",
+      "img/csodetectionalgorithm/fig04.png"
+    ],
     "toolLink":"https://cso-detection-algorithm.icradev.cat/",
     "codeLink":"https://github.com/icra/cso_detection_algorithm",
     "filters":{
-      "license type":["public"], "functionality":["control"], "topic":["pollution"], "urban water cycle":["sewer"]
+      "license type":["public"],
+      "functionality":["control","maintenance","operation","management"],
+      "topic":["pollution"],
+      "urban water cycle":["sewer"]
     }
   },
 
@@ -34,15 +42,15 @@
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
-    "imageName":"ecam/logo-notext.jpg",
+    "imageName":"img/ecam/logo-notext.jpg",
     "otherImages":[],
     "toolLink":"https://climatesmartwater.org/ecam",
     "codeLink":"https://github.com/icra/ecam",
     "filters":{
       "license type":["public"],
       "functionality":["planning", "design", "optimization", "decision support", "modelling"],
-      "topic":["GHG", "cost"],
-      "urban water cycle":["distribution", "reuse"]
+      "topic":["GHG","costs","energy"],
+      "urban water cycle":["drinking water","distribution","collection","sewer","treatment","reuse"]
     }
   },
 
@@ -59,20 +67,26 @@
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
-    "imageName":"ecoadvisor/logo.jpg",
-    "otherImages":["ecoadvisor/fig01.jpg", "ecoadvisor/fig02.jpg", "ecoadvisor/fig03.jpg", "ecoadvisor/fig04.jpg", "ecoadvisor/fig05.jpg"],
+    "imageName":"img/ecoadvisor/logo.jpg",
+    "otherImages":[
+      "img/ecoadvisor/fig01.jpg",
+      "img/ecoadvisor/fig02.jpg",
+      "img/ecoadvisor/fig03.jpg",
+      "img/ecoadvisor/fig04.jpg",
+      "img/ecoadvisor/fig05.jpg"
+    ],
     "toolLink":"http://ecoadvisor.icra.cat/",
     "codeLink":"https://github.com/icra/ecoadvisor",
     "filters":{
-      "license type":["public"],
+      "license type":["private"],
       "functionality":["operation", "optimization", "control", "management", "decision support"],
-      "topic":["cost", "ecology"],
+      "topic":["costs", "ecology","energy"],
       "urban water cycle":["treatment", "river"]
     }
   },
 
   {
-    "name":"Edible City Game",
+    "name":"EdibleCity Game",
     "shortDescription":"A serious videogame for participatory urban planning of Edible City Solutions",
     "description":"The second leg of the EdiCitNet toolbox is the Edible City Game, a multiplayer serious game designed to showcase the co-benefits of Edible City Solutions. The game is a participatory urban planning process where twelve different ECS can be implemented by the players as long as they respect the normative and do not exceed their budgets. The available ECS combine different aims (communitarian or professional), technologies (soil-based or hydroponic), different locations (on the ground or rooftop) and different yields (vegetables or fruit trees). To explore the impact of these twelve ECS, 8 indicators are calculated: heat island effect; water management; green accessibility; public participation; green economy; food sovereignty; green justice. Competing with the implementation of ECS, the players can also construct social housing to avoid gentrification and install solar panels to increase the production of renewable energies in the city. The players can choose among eight different characters to play with, each character corresponds to a specific stakeholder with different interests in the city: municipality; neighbours\u2019 association; SME organization; educational sector; consumers\u2019 cooperative; social sector; conservationist NGO and tourism promotion agency. During the game, the players interact among them by buying and selling plots, granting permissions, or requesting subsidies.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
@@ -82,8 +96,14 @@
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"}
     ],
-    "imageName":"edicitnet/edicitnet.jpg",
-    "otherImages":["edibleCityGame/GUI_01.png", "edibleCityGame/GUI_02.png", "edibleCityGame/GUI_03.png", "edibleCityGame/GUI_04.png", "edibleCityGame/GUI_05.png"],
+    "imageName":"img/edicitnet/edicitnet.jpg",
+    "otherImages":[
+      "img/edibleCityGame/GUI_01.png",
+      "img/edibleCityGame/GUI_02.png",
+      "img/edibleCityGame/GUI_03.png",
+      "img/edibleCityGame/GUI_04.png",
+      "img/edibleCityGame/GUI_05.png"
+    ],
     "toolLink":"",
     "codeLink":"",
     "filters":{
@@ -109,8 +129,11 @@
     "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher/Main developer", "email":"jpueyo@icra.cat"}
     ],
-    "imageName":"18/edicitnet.jpg",
-    "otherImages":["18/indicators.png", "18/results_plot.png"],
+    "imageName":"img/18/edicitnet.jpg",
+    "otherImages":[
+      "img/18/indicators.png",
+      "img/18/results_plot.png"
+    ],
     "toolLink":"",
     "codeLink":"https://github.com/icra/edibleCity",
     "filters":{
@@ -136,14 +159,19 @@
       {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"},
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher", "email":"jpueyo@icra.cat"}
     ],
-    "imageName":"edicitnet/edicitnet.jpg",
-    "otherImages":["edicitnet/app_1.png", "edicitnet/app_2.png", "edicitnet/app_3.png", "edicitnet/app_4.png"],
+    "imageName":"img/edicitnet/edicitnet.jpg",
+    "otherImages":[
+      "img/edicitnet/app_1.png",
+      "img/edicitnet/app_2.png",
+      "img/edicitnet/app_3.png",
+      "img/edicitnet/app_4.png"
+    ],
     "toolLink":"http://toolbox.edicitnet.com/",
     "codeLink":"",
     "filters":{
       "license type":["public"],
       "functionality":["planning", "design", "optimization", "decision support"],
-      "topic":["GHG", "cost"],
+      "topic":["GHG","costs"],
       "urban water cycle":["distribution", "reuse"]
     }
   },
@@ -161,14 +189,14 @@
       {"name":"Adrià Riu", "position":"Main developer of the map viewer", "email":"ariu@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer of the data communication protocols", "email":"lbosch@icra.cat"}
     ],
-    "imageName":"16/gestor.jpg",
-    "otherImages":["16/1489066181.jpg"],
+    "imageName":"img/16/gestor.jpg",
+    "otherImages":["img/16/1489066181.jpg"],
     "toolLink":"https://www.plataformagestor.com/",
     "codeLink":"",
     "filters":{
-      "license type":[],
-      "functionality":["decision support", "management", "planning", "modelling"],
-      "topic":["corrosion", "odours", "cost"],
+      "license type":["private"],
+      "functionality":["decision support","management","planning","modelling"],
+      "topic":["corrosion","odours","costs"],
       "urban water cycle":["sewer"]
     }
   },
@@ -195,13 +223,20 @@
       {"name":"Rafael Marcé", "position":"Research scientist", "email":"rmarce@icra.cat"},
       {"name":"Vicenç Acuña", "position":"Research scientist", "email":"vacuna@icra.cat"}
     ],
-    "imageName":"logo_icra.png",
-    "otherImages":["globalfate/fig01.png","globalfate/fig02.png","globalfate/fig03.png","globalfate/fig04.png","globalfate/fig05.png","globalfate/fig06.png"],
+    "imageName":"img/logo_icra.png",
+    "otherImages":[
+      "img/globalfate/fig01.png",
+      "img/globalfate/fig02.png",
+      "img/globalfate/fig03.png",
+      "img/globalfate/fig04.png",
+      "img/globalfate/fig05.png",
+      "img/globalfate/fig06.png"
+    ],
     "toolLink":"",
-    "codeLink":"https://github.com/icra/GLOBALFATE",
+    "codeLink":"//github.com/icra/GLOBALFATE",
     "filters":{
       "license type":["public"],
-      "functionality":["control", "modelling"],
+      "functionality":["control","modelling"],
       "topic":["pollution"],
       "urban water cycle":["river"]
     }
@@ -224,8 +259,13 @@
       {"name":"Jihyeon Kim","position":"Université du Québec à Montréal - UQAM"},
       {"name":"Yves T. Prairie","position":"Université du Québec à Montréal - UQAM"}
     ],
-    "imageName":"logo_icra.png",
-    "otherImages":["headspace/fig01.png","headspace/fig02.png","headspace/fig03.png","headspace/fig04.png"],
+    "imageName":"img/logo_icra.png",
+    "otherImages":[
+      "img/headspace/fig01.png",
+      "img/headspace/fig02.png",
+      "img/headspace/fig03.png",
+      "img/headspace/fig04.png"
+    ],
     "toolLink":"",
     "codeLink":"https://github.com/icra/headspace",
     "filters":{
@@ -245,8 +285,8 @@
     "credits":[
       {"name":"Josep Pueyo-Ros","position":"Postdoc researcher","email":"jpueyo@icra.cat"}
     ],
-    "imageName":"17/main_logo.png",
-    "otherImages":["17/Captura de pantalla 2021-07-20 145944.png"],
+    "imageName":"img/17/main_logo.png",
+    "otherImages":["img/17/Captura de pantalla 2021-07-20 145944.png"],
     "toolLink":"https://plugins.qgis.org/plugins/ICRA/",
     "codeLink":"https://github.com/icra/QGISprocessing",
     "filters":{
@@ -268,8 +308,8 @@
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
     ],
-    "imageName":"logo_icra.png",
-    "otherImages":["MBR/fig01.png"],
+    "imageName":"img/logo_icra.png",
+    "otherImages":["img/MBR/fig01.png"],
     "toolLink":"",
     "codeLink":"https://github.com/icra/mbr",
     "filters":{
@@ -295,8 +335,8 @@
       {"name":"Joana Castellar", "position":"Postdoc Researcher", "email":"jcastellar@icra.cat"},
       {"name":"Josep Pueyo-Ros", "position":"Postdoc Researcher", "email":"jpueyo@icra.cat"}
     ],
-    "imageName":"edicitnet/edicitnet.jpg",
-    "otherImages":["nbs-list/fig01.png","nbs-list/fig02.png"],
+    "imageName":"img/edicitnet/edicitnet.jpg",
+    "otherImages":["img/nbs-list/fig01.png","img/nbs-list/fig02.png"],
     "toolLink":"https://icra.shinyapps.io/nbs-list/",
     "codeLink":"https://github.com/icra/nbs_list",
     "filters":{
@@ -317,8 +357,8 @@
       {"name":"Lluís Corominas", "position":"Research Scientist", "email":"lcorominas@icra.cat"},
       {"name":"Maite Pijuan", "position":"Research Scientist", "email":"mpijuan@icra.cat"}
     ],
-    "imageName":"14/Captura de pantalla 2021-04-23 172642.png",
-    "otherImages":["14/Captura de pantalla 2021-04-23 121202.png"],
+    "imageName":"img/14/Captura de pantalla 2021-04-23 172642.png",
+    "otherImages":["img/14/Captura de pantalla 2021-04-23 121202.png"],
     "toolLink":"https://reach.icra.cat/",
     "codeLink":"",
     "filters":{
@@ -343,8 +383,11 @@
       {"name":"Joan Saló", "position":"Tool developer", "email":"jsalo@icra.cat"},
       {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"}
     ],
-    "imageName":"15/Red-Cross.png",
-    "otherImages":["15/Captura de pantalla 2021-04-23 173124.png", "15/Captura de pantalla 2021-04-23 173226.png"],
+    "imageName":"img/15/Red-Cross.png",
+    "otherImages":[
+      "img/15/Captura de pantalla 2021-04-23 173124.png",
+      "img/15/Captura de pantalla 2021-04-23 173226.png"
+    ],
     "toolLink":"https://im.cruzroja.es/HWTSDSS/",
     "codeLink":"http://gogs.icradev.cat/adriariu/RedCross-HWT",
     "filters":{
@@ -366,14 +409,19 @@
       {"name":"Joan Saló", "position":"Tool developer", "email":"jsalo@icra.cat"},
       {"name":"Roser Brugués", "position":"Tool developer", "email":"rbrugues@icra.cat"}
     ],
-    "imageName":"remapp/logo_mem.png",
-    "otherImages":["remapp/app_1.png","remapp/app_2.png","remapp/app_3.png","remapp/remapp.jpg"],
+    "imageName":"img/remapp/logo_mem.png",
+    "otherImages":[
+      "img/remapp/app_1.png",
+      "img/remapp/app_2.png",
+      "img/remapp/app_3.png",
+      "img/remapp/remapp.jpg"
+    ],
     "toolLink":"http://remapp.icra.cat/",
     "codeLink":"https://github.com/icra/remapp",
     "filters":{
       "license type":["public"],
       "functionality":["selection", "maintenance", "management", "decision support"],
-      "topic":["membranes", "cost"],
+      "topic":["membranes", "costs"],
       "urban water cycle":["treatment", "reuse"]
     }
   },
@@ -398,8 +446,12 @@
       {"name":"Lluís Bosch", "position":"Backend developer", "email":"lbosch@icra.cat"},
       {"name":"Yaimara Espiñeira", "position":"EURECAT frontend developer", "email":""}
     ],
-    "imageName":"sars/coronavirus.jpg",
-    "otherImages":["10/Captura de pantalla 2021-04-23 173625.png","10/Captura de pantalla 2021-04-23 173708.png","10/Captura de pantalla 2021-04-23 173737.png"],
+    "imageName":"img/sars/coronavirus.jpg",
+    "otherImages":[
+      "img/10/Captura de pantalla 2021-04-23 173625.png",
+      "img/10/Captura de pantalla 2021-04-23 173708.png",
+      "img/10/Captura de pantalla 2021-04-23 173737.png"
+    ],
     "toolLink":"https://sarsaigua.icra.cat/",
     "codeLink":"",
     "filters":{
@@ -422,8 +474,12 @@
       {"name":"Lluís Corominas", "position":"Research Scientist", "email":"lcorominas@icra.cat"},
       {"name":"Adrià Riu", "position":"Main developer", "email":"ariu@icra.cat"}
     ],
-    "imageName":"13/1519863775098.png",
-    "otherImages":["13/Captura de pantalla 2021-04-23 141208.png", "13/Captura de pantalla 2021-04-23 173403.png", "13/Captura de pantalla 2021-04-23 173442.png"],
+    "imageName":"img/13/1519863775098.png",
+    "otherImages":[
+      "img/13/Captura de pantalla 2021-04-23 141208.png",
+      "img/13/Captura de pantalla 2021-04-23 173403.png",
+      "img/13/Captura de pantalla 2021-04-23 173442.png"
+    ],
     "toolLink":"https://snapp.icra.cat/",
     "codeLink":"",
     "filters":{
@@ -446,8 +502,8 @@
       {"name":"Oriol Gutiérrez", "position":"Postdoc researcher", "email":"ogutierrez@icra.cat"},
       {"name":"Lluís Bosch", "position":"Main developer","email":"lbosch@icra.cat"}
     ],
-    "imageName":"wanesy/gestor.jpg",
-    "otherImages":["wanesy/fig01.png"],
+    "imageName":"img/wanesy/gestor.jpg",
+    "otherImages":["img/wanesy/fig01.png"],
     "toolLink":"",
     "codeLink":"https://github.com/icra/wanesy-read",
     "filters":{
@@ -468,8 +524,8 @@
       {"name":"Rafael Marcé","position":"Research scientist","email":"rmarce@icra.cat"},
       {"name":"Daniel Mercado-bettín","position":"Postdoc Researcher","email":"dmercado@icra.cat"}
     ],
-    "imageName":"watexr/logo.png",
-    "otherImages":["watexr/fig01.jpg"],
+    "imageName":"img/watexr/logo.png",
+    "otherImages":["img/watexr/fig01.jpg"],
     "toolLink":"https://watexr.eu/",
     "codeLink":"https://github.com/icra/WATExR",
     "filters":{
@@ -496,7 +552,7 @@
       {"name":"Laura Aixalà", "position":"Research technician", "email":"laixala@icra.cat"},
       {"name":"Joan Saló", "position":"Research technician", "email":"jsalo@icra.cat"}
     ],
-    "imageName":"19/wOtterscheme.png",
+    "imageName":"img/19/wOtterscheme.png",
     "otherImages":[],
     "toolLink":"https://github.com/icra/wOtter",
     "codeLink":"https://github.com/icra/wOtter",

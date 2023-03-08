@@ -62,6 +62,10 @@
       color:var(--blau-icra);
       text-decoration:underline;
     }
+    a[current_sort=true]{
+      text-decoration:underline;
+      font-weight:bold;
+    }
   </style>
 
   <!--css grid all apps-->
@@ -100,6 +104,15 @@
     }
     div.carousel img:hover{
       border-color:var(--blau-icra);
+    }
+    span.tag{
+      display:inline-block;
+      margin:1px 2px;
+      background:orange;
+      border-radius:5px;
+      padding:0 10px;
+      font-family:monospace;
+      box-shadow:1px 1px 2px;
     }
   </style>
 </head><body>
@@ -148,14 +161,13 @@
             <span v-for="key in ['name','contributions']">
               <a
                 @click="sort_people_by=key"
-                :style="{color:sort_people_by==key?'black':''}"
+                :current_sort="sort_people_by==key"
                 v-html="key"
               ></a>
               <b>/</b>
             </span>
           </div>
           <ul
-            id=all_contributors
             style="
               list-style:none;
               padding-left:10px;
@@ -163,7 +175,7 @@
           >
             <li v-for="arr,name in all_people">
               <div style="white-space:nowrap;">{{name}} ({{arr.length}})</div>
-              <ul>
+              <ul style="padding-left:30px">
                 <li
                   v-for="repo in arr.map(per=>per.project)"
                   class="left_list_item gris"
@@ -190,7 +202,7 @@
               <a
                 @click="sort_public_repos_by(key)"
                 v-html="key"
-                :style="{color:key==public_repos_sort_by?'black':''}"
+                :current_sort="key==public_repos_sort_by"
               ></a>
               <b>/</b>
             </span>
@@ -249,15 +261,25 @@
           </button>
         </small>
       </p>
+
+      <!--new project template-->
+      <details>
+        <summary>
+          <b>New project template</b>
+        </summary>
+        <code>
+          <pre v-html="new_project_template"></pre>
+        </code>
+      </details>
     </div>
   </div>
 
   <!--right part-->
   <div style="width:100%">
     <nav style="text-align:right" class=gris>
-      <a href="http://icra.cat/index.php?lang=3" target="_blank">ICRA homepage</a> |
-      <a href="https://github.com/icra" target="_blank">ICRA github</a> |
-      <a href="all_public_repos.html" target="_blank">All public repos</a>
+      <a href="http://icra.cat/index.php?lang=3">ICRA homepage</a> |
+      <a href="https://github.com/icra">ICRA github</a> |
+      <a href="all_public_repos.html">All public repos</a>
     </nav>
 
     <!--all apps grid-->
@@ -284,16 +306,32 @@
         Pueyo &amp; Joan Saló).
       </p>
 
-      <!--search box-->
-      <div style="background:#5a6870;padding:1em">
+      <!--search box and filters-->
+      <div style="background:#5a6870;padding:1em;">
         <input v-model="current_filter" placeholder="Search apps">
         <button @click="current_filter=''" :disabled="current_filter==''">clear</button>
-        <details style="color:white" open v-if="false">
-          <summary>Filters</summary>
-          <div>
-            TODO
-            {{all_filters}}
-          </div>
+
+        <details style="color:white;margin-top:10px">
+          <summary>Advanced filters</summary>
+          <ul>
+            <li v-for="obj,key in repo_filters" style="margin-bottom:5px">
+              <div><b>{{key[0].toUpperCase()+key.substring(1)}}</b></div>
+              <div
+                style="
+                  display:grid;
+                  grid-template-columns:repeat(4,25%);
+                "
+              >
+                <div v-for="val,keyy in obj">
+                  <label style="display:flex;align-items:center">
+                    <input type=checkbox v-model="obj[keyy]">
+                    <span>{{keyy}}</span>
+                  </label>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <button @click="compute_repo_filters()">clear all</button>
         </details>
       </div>
 
@@ -304,9 +342,9 @@
           class="grid_item_app"
           @click="set_current_app(repo)"
         >
-          <h3 style="text-align:center">{{repo.name}}</h3>
+          <h3 style="text-align:center" v-html="repo.name"></h3>
           <div>
-            <img :src="`img/${repo.imageName}`"
+            <img :src="repo.imageName"
               alt="Image"
               style="
                 width:100%;
@@ -343,7 +381,7 @@
       ">
         <div style="max-width:38.2%">
           <img
-            :src="`img/${current_app.imageName}`"
+            :src="current_app.imageName"
             style="
               max-width:100%;
               height:100px;
@@ -354,15 +392,18 @@
             "
           >
         </div>
-        <div style="
-          font-size:2em;
-          font-weight:bold;
-          padding:0 0.618em;
-          height:100px;
-          box-sizing:border-box;
-          display:flex;
-          align-items:center;
-        ">{{current_app.name}}</div>
+        <div
+          style="
+            font-size:2em;
+            font-weight:bold;
+            padding:0 0.618em;
+            height:100px;
+            box-sizing:border-box;
+            display:flex;
+            align-items:center;
+          "
+          v-html="current_app.name"
+        ></div>
       </div>
 
       <!--description-->
@@ -381,9 +422,9 @@
             grid-gap:10px;
           "
         >
-          <div v-for="img in current_app.otherImages">
-            <a :href="`img/${img}`" target="_blank">
-              <img :src="`img/${img}`">
+          <div v-for="src in current_app.otherImages">
+            <a :href="src" target="_blank">
+              <img :src="src">
             </a>
           </div>
         </div>
@@ -448,6 +489,19 @@
             <a :href="current_app.codeLink" target="_blank">{{current_app.codeLink}}</a>
           </li></ul>
         </div>
+        <hr class=orange>
+      </div>
+
+      <!--repo filters-->
+      <div v-if="current_app.filters" id=filters>
+        <h3>Tags</h3>
+        <ul>
+          <li v-for="arr,key in current_app.filters">
+            <b>{{key[0].toUpperCase()+key.substring(1)}}: </b>
+            <span v-for="el in arr" class=tag>{{el}}</span>
+            <code v-if="arr.length==0">&empty;</code>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -457,25 +511,21 @@
 <script>
   let app=Vue.createApp({
     data(){return{
-      repos:[],
-      current_app:false,
-      current_filter:"",//filter by name
+      repos:[],//array
+      current_app:false,//bool
+      current_filter:"",//string
+      repo_filters:{},//dict
 
-      //left list sorting
-      sort_people_by:"contributions",
+      //section "left lists"
+      sort_people_by:"contributions",//string
 
       //public repos
-      public_repos:[],
-      public_repos_loading:true,
-      public_repos_sort_by:"stars",
+      public_repos:[],//array
+      public_repos_loading:true,//bool
+      public_repos_sort_by:"stars",//string
 
-      //filters for main page TODO
-      filters:{
-        "license type":[],
-        "functionality":[],
-        "topic":[],
-        "urban water cycle":[],
-      },
+      //new project template
+      new_project_template:"",
     }},
 
     methods:{
@@ -505,6 +555,7 @@
         window.history.pushState({},"",url);
       },
 
+      //load repo if GET param "app" is set in the url
       set_current_app_onload(){
         const url = new URL(window.location);
         let app_name = url.searchParams.get("app");
@@ -544,13 +595,57 @@
             });break;
         }
       },
+
+      //get all filter values (2 levels depth)
+      //needs to be done only once
+      compute_repo_filters(){
+        let dict={};
+        this.repos.forEach(repo=>{
+          Object.keys(repo.filters).forEach(key=>{
+            if(!dict[key]){
+              dict[key]={};
+            }
+            repo.filters[key].forEach(el=>{
+              dict[key][el]=false;
+            });
+          });
+        });
+
+        //sort alphabetically the values (2nd level of depth)
+        let dict_sorted={};
+        Object.keys(dict).forEach(key1=>{
+          dict_sorted[key1]={};
+          Object.keys(dict[key1]).sort().forEach(key2=>{
+            dict_sorted[key1][key2]=false;
+          });
+        });
+
+        this.repo_filters=dict_sorted;
+      },
     },
 
     computed:{
       get_repos(){
-        let filter = this.current_filter;
-        if(!filter) return this.repos;
-        return this.repos.filter(r=>r.name.toLowerCase().includes(filter));
+        let repos = [...this.repos];
+        let filter = this.current_filter;//string
+        if(filter){
+          filter = filter.toLowerCase();
+          repos = this.repos.filter(r=>r.name.toLowerCase().includes(filter));
+        }
+
+        Object.keys(this.repo_filters).forEach(key1=>{
+          Object.keys(this.repo_filters[key1]).forEach(key2=>{
+            if(!this.repo_filters[key1][key2]) return;
+            repos = repos.filter(r=>{
+              if(!r.filters) return false;
+              if(!r.filters[key1]) return false;
+              if(r.filters[key1].includes(key2)) return true;
+              return false
+            });
+          });
+        });
+
+        return repos;
       },
 
       current_app_index(){
@@ -570,7 +665,7 @@
           });
         });
 
-        //sort dict here
+        //sort dict keys
         let retval={};
         let keys=Object.keys(dict);
 
@@ -586,24 +681,22 @@
         });
         return retval;
       },
-
-      all_filters(){ //TODO
-        let dict={};
-        return this.repos.forEach(repo=>{
-          Object.keys(repo.filters).forEach(key=>{
-            if(!dict[key]) dict[key]={};
-            //Obj
-          });
-        });
-        return dict;
-      },
     },
-
   }).mount("#app");
 
   fetch("apps.json").then(r=>r.json()).then(arr=>{
     app.repos=arr;
+    //sort repos A-Z
+    app.repos.sort((a,b)=>{
+      return a.name<b.name?-1:1;
+    });
+
     app.set_current_app_onload();
+    app.compute_repo_filters();
+  });
+
+  fetch("new_project_template.json").then(r=>r.text()).then(txt=>{
+    app.new_project_template=txt;
   });
 
   /*history press back button*/

@@ -1,0 +1,66 @@
+{
+  "name":"app name",
+  "shortDescription":"short description here",
+  "description":"full description here",
+  "project":"project details here",
+  "publications":[
+    {
+      "authors":"authors here",
+      "title":"title here",
+      "link":"url to journal here"
+    }
+  ],
+  "credits":[
+    {
+      "name":"name here",
+      "position":"position/contribution",
+      "email":"mail here"
+    }
+  ],
+  "imageName":"url/or/path/to/image/here",
+  "otherImages":[
+    "url/or/path/to/image/here",
+    "url/or/path/to/image/here"
+  ],
+  "toolLink":"url here",
+  "codeLink":"url here",
+  "filters":{
+    "license type":[
+      "public",
+      "private"
+    ],
+    "functionality":[
+      "control",
+      "decision support",
+      "design",
+      "maintenance",
+      "management",
+      "modelling",
+      "operation",
+      "optimization",
+      "planning",
+      "selection"
+    ],
+    "topic":[
+      "GHG",
+      "NBS",
+      "corrosion",
+      "costs",
+      "ecology",
+      "energy",
+      "epidemiology",
+      "membranes",
+      "odours",
+      "pollution"
+    ],
+    "urban water cycle":[
+      "collection",
+      "distribution",
+      "drinking water",
+      "reuse",
+      "river",
+      "sewer",
+      "treatment"
+    ]
+  }
+}
