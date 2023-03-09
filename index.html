@@ -192,7 +192,7 @@
       <details open id=all_public_repos>
         <summary>
           <b>ALL PUBLIC REPOS ({{public_repos.length}})</b>
-          <span v-if="public_repos_loading">[loading...]</span>
+          <span v-if="public_repos_loading"> [loading...]</span>
         </summary>
         <div>
           <div style="font-size:smaller">
@@ -211,7 +211,8 @@
             <li v-for="repo in public_repos">
               <div style="display:flex;">
                 <a :href="repo.html_url" target="_blank">{{repo.full_name}}</a>
-                <div v-if="repo.stargazers_count" style="display:flex;align-items:center;">
+
+                <div v-if="repo.stargazers_count" style="font-size:smaller;display:flex;align-items:center;" title="stars">
                   <svg height="16" width="16">
                     <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882
                     3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75
@@ -226,7 +227,7 @@
                   <div>{{repo.stargazers_count}}</div>
                 </div>
 
-                <div v-if="repo.forks_count" style="display:flex;align-items:center;">
+                <div v-if="repo.forks_count" style="font-size:smaller;display:flex;align-items:center;" title="forks">
                   <svg height="16" width="16">
                     <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0
                     011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75
@@ -237,6 +238,16 @@
                     1.5z"></path>
                   </svg>
                   <div>{{repo.forks_count}}</div>
+                </div>
+
+                <div v-if="repo.open_issues_count" style="font-size:smaller;display:flex;align-items:center;" title="open issues">
+                  <svg height="16" width="16">
+                    <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000
+                    3z"></path><path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8
+                    8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13
+                    0z"></path>
+                  </svg>
+                  <div>{{repo.open_issues_count}}</div>
                 </div>
               </div>
             </li>
@@ -265,7 +276,7 @@
       <!--new project template-->
       <details>
         <summary>
-          <b>New project template (JSON)</b>
+          <b>New project template</b>
         </summary>
         <code>
           <pre v-html="new_project_template"></pre>
