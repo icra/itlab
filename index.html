@@ -52,7 +52,6 @@
   <style>
     .left_list_item{
       cursor:pointer;
-      font-size:smaller;
       white-space:nowrap;
     }
     .left_list_item[current=true]{
@@ -179,6 +178,7 @@
                 <li
                   v-for="repo in arr.map(per=>per.project)"
                   class="left_list_item gris"
+                  style="font-size:smaller"
                   :current="current_app==repo"
                   @click="set_current_app(repo)"
                   v-html="repo.name"
@@ -198,7 +198,7 @@
           <div style="font-size:smaller">
             Sort by
             <b>/</b>
-            <span v-for="key in ['name','updated','created','stars','forks','contributors']">
+            <span v-for="key in ['name','updated','created','stars','forks']">
               <a
                 @click="sort_public_repos_by(key)"
                 v-html="key"
@@ -583,10 +583,6 @@
             repos.sort((a,b)=>{
               return b.forks_count-a.forks_count;
             });break;
-          case "contributors":
-            repos.sort((a,b)=>{
-              return b.contributors.length-a.contributors.length;
-            });break;
           case "name":
             repos.sort((a,b)=>{
               return b.full_name.toUpperCase()<a.full_name.toUpperCase()?1:-1;
@@ -746,13 +742,6 @@
 
       arr.forEach(repo=>{
         app.public_repos.push(repo);
-
-        //llegeix contributors (async)
-        fetch(repo.contributors_url,{headers})
-        .then(r=>r.json())
-        .then(arr=>{
-          repo.contributors=arr;
-        });
       });
 
       //next page
