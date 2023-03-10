@@ -61,11 +61,12 @@
     "project":"Eco-Advisor for Wise Leading Water Management, funded by Global Omnium & Aigües de Catalunya",
     "publications":[],
     "credits":[
-      {"name":"Laura Castañares", "position":"Research technician", "email":"lcastanares@icra.cat"},
       {"name":"Vicenç Acuña", "position":"Research scientist", "email":"vacuna@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
       {"name":"Lluís Corominas", "position":"Research scientist", "email":"lcorominas@icra.cat"},
-      {"name":"Lluís Bosch", "position":"Main developer", "email":"lbosch@icra.cat"}
+      {"name":"Lluís Bosch", "position":"Main developer"},
+      {"name":"Laura Castañares", "position":"Research technician"},
+      {"name":"Anna Valls", "position":"Software developer"}
     ],
     "imageName":"img/ecoadvisor/logo.jpg",
     "otherImages":[
