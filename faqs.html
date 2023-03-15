@@ -1,0 +1,448 @@
+<!doctype html><html><head>
+<meta charset=utf8>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<title>FAQs ICRA/GITHUB/ITLAB</title>
+<style>
+  body{
+    max-width:1200px;
+  }
+  ul{
+    list-style:none;
+    padding-left:20px;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:bold;
+  }
+  summary:hover{
+    text-decoration:underline;
+  }
+  div.resposta{
+    background:lightyellow;
+    padding:5px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+</style>
+<script>
+let faqs={
+  "GitHub":{
+    "Ús del GitHub":{
+      "Què és GitHub?":`
+        GitHub és una plataforma web que permet als usuaris gestionar projectes
+        de programari mitjançant el control de versions i la col·laboració. És
+        una eina molt popular entre desenvolupadors de programari i equips de
+        treball per compartir codi, realitzar seguiment de canvis i gestionar
+        col·laboracions.
+      `,
+      "Per què serveix a ICRA?":`
+        A ICRA, GitHub és utilitzat per als investigadors per compartir codi,
+        desenvolupar aplicacions i realitzar seguiment de canvis en diferents
+        projectes de recerca. Això ajuda a millorar la eficiència del treball,
+        ja que els investigadors poden compartir el codi entre ells i
+        col·laborar en temps real.
+      `,
+      "Qui ha decidit que es fa servir?":`
+        La decisió d'utilitzar GitHub a ICRA va ser presa el 2018 per Lluís
+        Bosch al veure els beneficis que aquesta eina podia oferir en la gestió
+        de projectes i la col·laboració. Es va crear el compte d'ICRA per
+        allotjar l'eina ECAM, i així poder-ne allotjar d'altres en un futur.
+      `,
+      "Qui ha de saber que es fa servir?":`
+        Els membres de l'equip d'ICRA que estan treballant en els diferents
+        projectes i necessiten compartir codi i col·laborar en línia són els
+        qui han de saber que es fa servir GitHub. També els col·laboradors
+        externs que treballen conjuntament amb investigadors d'ICRA en algun
+        projecte on hi hagi codi involucrat.
+      `,
+      "Com es pot anar al GitHub d’ICRA?":`
+        Per accedir al GitHub d'ICRA, es pot utilitzar el següent URL: <a
+        href='https://github.com/icra'>https://github.com/icra</a>. Cal tenir
+        un compte de GitHub per accedir als repositoris privats i col·laborar
+        en els projectes.
+      `,
+      "Com és que no hi ha un enllaç a la web d’ICRA per anar-hi?":`
+        És possible que no hi hagi un enllaç a la pàgina web d'ICRA per accedir
+        al GitHub perquè no és necessari que tothom accedeixi a aquesta eina.
+        En general, les persones que hi accediran seran les interessades en
+        explorar els repositoris públics (open source) i les que vulguin
+        compartir codi i col·laborar en línia.
+      `,
+      "Qui gestiona el GitHub d’ICRA?":`
+        El GitHub d'ICRA és gestionat pels mateixos investigadors que fan
+        servir aquesta eina per als seus projectes. Cada equip és responsable
+        de gestionar el seu propi repositori i afegir o eliminar col·laboradors
+        segons les necessitats del projecte.
+
+        Dins de les organitzacions de GitHub existeix el rol d'administrador
+        global ("org owner"), que té accés de lectura i escriptura de tots els
+        repositoris. A data 15 de març del 2023, els permisos d'administrador
+        del GitHub d'ICRA els té Lluís Bosch.
+      `,
+    },
+    "Ús del personal d’ICRA":{
+      "Qui decideix que un projecte s’inclou a GitHub?":`
+        La decisió d'incloure un projecte a GitHub depèn dels membres de
+        l'equip que estan involucrats en el projecte. Si els investigadors
+        consideren que GitHub seria una eina útil per als seus projectes, poden
+        decidir incloure'l.
+      `,
+      "Qui hi ha d’introduir el projecte?":`
+        Els membres de l'equip que estan involucrats en el projecte són els que
+        han d'introduir el projecte a GitHub i començar a compartir el codi.
+      `,
+      "En el cas de que sigui Open Source, com podem saber si hi ha gent externa a ICRA que hi contribueix?":`
+        En el cas que el projecte sigui Open Source, és possible que hi hagi
+        gent externa a ICRA que hi contribueixi. A GitHub es pot veure
+        l'historial de les contribucions i els autors del codi. Així, és fàcil
+        saber si hi ha hagut contribucions de persones externes.
+      `,
+      "Podem identificar qui ha contribuït?":`
+        A GitHub es pot identificar qui ha contribuït a cada projecte a través
+        de l'historial de les contribucions. Això ajuda als membres de l'equip
+        a mantenir un control dels canvis que s'han produït en el codi.
+      `,
+      "Qui accepta o denega les contribucions de la gent externa per cada projecte?":`
+        El procés d'acceptar o rebutjar les contribucions de persones externes
+        depèn dels membres de l'equip que estan treballant en el projecte. Això
+        pot implicar la revisió de les contribucions, la discussió entre els
+        membres de l'equip i l'acceptació o rebutjament final de les
+        contribucions.
+      `,
+      "Quina és la política de GitHub en quant a drets de PI de les persones que contribueixen, tant pel codi que reben com el que contribueixen?":`
+        En quant als drets de propietat intel·lectual (PI), GitHub té una
+        política que es basa en el respecte als drets de PI dels creadors del
+        contingut que es pugui publicar a la plataforma. Això significa que, en
+        principi, els drets de PI corresponen als creadors del contingut. No
+        obstant, quan es fa una contribució a un projecte d'un altre usuari a
+        través de GitHub, el creador original del projecte rep una llicència
+        limitada per utilitzar i distribuir aquesta contribució en el marc del
+        projecte. En altres paraules, els creadors originals del projecte
+        conserven els drets de PI dels seus propis continguts, mentre que les
+        persones que fan contribucions a través de GitHub atorguen una
+        llicència limitada per a l'ús d'aquelles contribucions en el context
+        del projecte.
+      `,
+      "Es poden incloure vulnerabilitats als codis (malware) sense adonar-nos-en?":`
+        Pel que fa a la seguretat, és possible que es puguin incloure
+        vulnerabilitats en els codis publicats a GitHub. Això no té a veure amb
+        GitHub en sí mateix, sinó amb el fet que la plataforma és un lloc on
+        els desenvolupadors poden compartir codi. Per això, els responsables
+        dels projectes han de prendre les mesures de seguretat adequades per
+        assegurar-se que els codis publicats siguin segurs i no tinguin malware
+        o vulnerabilitats. Això pot incloure l'ús de tècniques com la revisió
+        del codi i la realització de proves de seguretat abans de publicar el
+        codi a GitHub. A més a més, GitHub també ofereix eines de seguretat per
+        als seus usuaris, com ara la detecció de vulnerabilitats i l'aplicació
+        de restriccions d'accés a repositoris específics.
+        <br><br>
+        Malgrat tot, les llicències open source solen incloure una clàusula de
+        limitació de garantia i responsabilitat, com per exemple la MIT:
+
+        <code>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE</code>.
+      `,
+    },
+    "Projectes":{
+      "Quina es la millor forma d’organització dels projectes a GitHub?":`
+        La millor forma d'organització dels projectes a GitHub depèn dels
+        objectius i les necessitats específiques de cada projecte. No obstant,
+        hi ha algunes pràctiques recomanades que poden ajudar a mantenir els
+        repositoris ordenats i fàcils d'utilitzar per a tots els membres de
+        l'equip. Algunes d'aquestes pràctiques inclouen:
+        <ol>
+          <li>Crear un repositori per a cada projecte: Això ajuda a mantenir el codi del projecte ordenat i aïllat d'altres projectes.
+          <li>Utilitzar les branques per a les diferents funcionalitats o versions: Això ajuda a mantenir el codi en un estat ordenat i establert per a cada funcionalitat o versió específica.
+          <li>Utilitzar les etiquetes per identificar les tasques o problemes: Les etiquetes ajuden a mantenir el seguiment de les tasques i problemes que es presenten al projecte.
+          <li>Utilitzar les descripcions als "commits" i les línies del temps ("git log"): Això ajuda a mantenir el registre dels canvis realitzats en el codi del projecte i de les diferents versions que es van publicant.
+          <li>
+            Mantenir una bona documentació: És important tenir una documentació
+            clara i precisa del projecte, així com de les instruccions de com
+            utilitzar-lo.  És molt típic que a l'arrel de cada repositori hi
+            hagi un fitxer anomenat "README" que tingui aquest tipus
+            d'informació.
+        </ol>
+      `,
+      "Els repositoris que ja existeixen, estan organitzats de la millor forma possible? Ho poden estar un cop fets?":`
+        Respecte a si els repositoris existents estan organitzats de la millor
+        forma possible, sempre hi ha possibilitat de millora i refinament. És
+        possible que, a mesura que el projecte evoluciona i s'incorporen nous
+        membres a l'equip, sigui necessari adaptar l'organització del
+        repositori per mantenir-lo ben estructurat i fàcilment accessible per a
+        tots els membres de l'equip.
+      `,
+      "Es pot saber qui ha participat en els projectes?":`
+        Sí, es pot saber qui ha participat en els projectes a través de
+        l'historial de commits i les diferents col·laboracions que s'han
+        realitzat en el repositori.
+      `,
+      "Es poden fer comptes de GitHub que identifiquin clarament el personal d’ICRA?":`
+        Sí, es pot crear comptes de GitHub que identifiquin clarament el
+        personal d'ICRA. De fet, és recomanable que els membres de l'equip
+        d'ICRA tinguin un compte de GitHub clarament identificable per
+        facilitar la gestió dels repositoris i la comunicació entre els
+        membres.
+      `,
+      "Quina es la vinculació de cada un dels repositoris existents amb el seu projecte?":`
+        Respecte a la vinculació de cada un dels repositoris existents amb el
+        seu projecte, això depèn dels detalls específics de cada projecte i
+        repositori. Pot ser que alguns repositoris estiguin més ben vinculats
+        als seus respectius projectes que altres. En general, és important
+        assegurar-se que cada repositori estigui ben etiquetat i documentat per
+        facilitar la seva identificació i vinculació amb el seu projecte
+        corresponent. Si hi ha dubtes sobre la vinculació de qualsevol
+        repositori, es pot contactar amb el responsable del repositori o amb
+        l'equip de gestió de GitHub d'ICRA per obtenir més informació.
+      `,
+      "Quina és la llicència que té cada projecte? Per què?":`
+        Respecte a la llicència que té cada projecte, això depèn dels detalls
+        específics de cada projecte i les seves necessitats. És important
+        assegurar-se que els projectes tinguin una llicència adequada que
+        protegeixi els drets de propietat intel·lectual i alhora permeti l'ús,
+        la modificació i la distribució del codi, si és el cas. Les llicències
+        més comunes són les llicències de codi obert, com la GPL, la MIT o la
+        Apache, però hi ha moltes altres opcions.
+      `,
+      "Hi ha projectes privats? Quins i per què?":`
+        Sí. A data 15-03-2023 hi ha 13 repositoris privats:
+        <ol>
+          <li>edicitnet2front
+          <li>covid-vigilancia
+          <li>edicitnet2API
+          <li>pipeline_analisi_aigues
+          <li>deteccio_especies
+          <li>virwaste-pca
+          <li>consum-electric
+          <li>OsciLakes
+          <li>apicovid
+          <li>ecoadvisor
+          <li>uct-icra-model
+          <li>idiap_icra
+          <li>Sau_SQL
+        </ol>
+
+        Poden haver-hi diverses raons per les quals aquests repositoris són
+        privats: poden ser projectes en marxa encara no publicats, o projectes
+        on hi ha un valor afegit que cal protegir, i que per tant s'ha decidit
+        tenir-lo privat.  Cal tenir en compte que en qualsevol moment es pot
+        modificar la visibilitat d'un repositori (passar-lo de privat a públic
+        o viceversa).
+      `,
+      "Quina llicència tenen els projectes privats?":`
+        La llicència que tinguin dependrà de les seves necessitats específiques
+        i les polítiques de cada projecte.  Les llicències privades no són com
+        les open-source, és a dir, no es fa una tria d'una llicència existent,
+        sinó que es confecciona des de zero; el propietari del software escull
+        el que vol que l'usuari final pugui fer o no puguir fer amb el seu
+        programa.
+      `,
+      "Hi ha algun repositori que no estigui vinculat a cap projecte? Per què?":`
+        Sí, hi ha repositoris a GitHub d'ICRA que no estan vinculats a cap
+        projecte específic. Això podria ser degut a una varietat de raons, com
+        ara la falta de documentació adequada o un canvi en la direcció del
+        projecte que ha portat a la separació del repositori del projecte
+        original.  També és possible que el repositori sigui una petita
+        utilitat temporal que s'ha pujat a GitHub per facilitar l'enviament de les
+        instruccions a altres col·laboradors, o sigui un repositori purament
+        descriptiu, com per exemple
+        <a href="https://github.com/icra/icra">https://github.com/icra/icra</a>
+      `,
+      "Els projectes indiquen el finançament o els socis que hagin contribuït en els projectes que pertoquin?":`
+        Els projectes a GitHub d'ICRA poden incloure informació sobre
+        finançament o socis que hagin contribuït al projecte (normalment
+        s'inclouen al fitxer README, a l'arrel del repositori), però això depèn
+        dels detalls específics de cada projecte i les seves necessitats. És
+        important assegurar-se que es compleixin les obligacions de divulgació
+        requerides pels finançadors o altres socis, si és el cas.
+      `,
+    },
+  },
+  "ITLAB":{
+    "Ús de ITLAB":{
+      "Què és ITLAB? Per què serveix? Qui ha decidit que es faci?":`
+        L'ITLAB de l'ICRA és un catàleg de les principals solucions
+        informàtiques desenvolupades en projectes de recerca i/o innovació amb
+        la participació de l'ICRA. Proporciona una descripció de cada projecte
+        i dóna crèdit als investigadors i enginyers informàtics involucrats.
+        Permet accedir a les solucions i, en alguns casos, al codi font.<br><br>
+
+        L'ITLAB ha estat promogut pel Dr. Lluís Corominas i el Prof. Joaquim
+        Comas i és mantingut pel equip d'enginyers informàtics involucrats en
+        el desenvolupament de les solucions informàtiques (Lluís Bosch, Adrià
+        Riu, Josep Pueyo i Joan Saló).
+      `,
+      "Com hi podem accedir des de la web d’ICRA?":`
+        Per accedir al ITLAB es pot utilitzar el següent URL:
+        <a href='https://itlab.icra.cat'>https://itlab.icra.cat</a>.<br>
+        A data 15-03-2023 no hi ha un link a ITLAB des de la web d'ICRA.
+      `,
+      "Quina relació té amb GitHub?":`
+        Cada aplicació i/o eina referenciada a l'ITLAB pot tenir un link al seu
+        repositori de GitHub, en cas que existeixi.
+      `,
+      "Qui gestiona ITLAB?":`
+        ITLAB va ser creat des de zero per Roser Brugués i Joan Saló. Més
+        endavant Josep Pueyo va incloure algunes modificacions.  El març del
+        2023 Lluís Bosch va refactoritzar i simplificar-ne el codi.  A data 15
+        de març del 2023, els permisos d'administrador de l'ITLAB els té Lluís
+        Bosch.
+      `,
+    },
+    "Ús del personal d’ICRA":{
+      "Qui decideix posar un projecte a ITLAB?":`
+        La decisió d'incloure un projecte a ITLAB depèn dels membres de
+        l'equip que estan involucrats en el projecte.
+      `,
+      "Quina informació es dona de cada projecte?":`
+        A la mateixa pàgina de l'ITLAB hi ha una plantilla que els
+        investigadors poden omplir per tal d'incloure un projecte a ITLAB.<br><br>
+        A data 15-03-2023 la plantilla té els següents camps:
+        <ol>
+          <li>Nom projecte/eina/aplicació
+          <li>Petita descripció
+          <li>Descripció completa
+          <li>Descripció de socis/fons/finaçament...
+          <li>Llista de publicacions (autors, títol i enllaç de cada publicació)
+          <li>Crèdits (nom, càrrec i mail de cada col·laborador del projecte)
+          <li>Una imatge amb el logo del projecte
+          <li>Captures de pantalla de l'eina
+          <li>Link a l'eina (descàrrega o ús si és una web-app)
+          <li>Link al codi de l'eina (normalment serà al github si és open source)
+          <li>Altres filtres:
+            <ol>
+              <li> tipus de llicència (pública o privada)
+              <li> funcionalitat (
+                "control",
+                "decision support",
+                "design",
+                "maintenance",
+                "management",
+                "modelling",
+                "operation",
+                "optimization",
+                "planning",
+                "selection"
+              )
+              <li> tema (
+                "GHG",
+                "NBS",
+                "corrosion",
+                "costs",
+                "ecology",
+                "energy",
+                "epidemiology",
+                "membranes",
+                "odours",
+                "pollution"
+              )
+              <li> cicle urbà de l'aigua (
+                "collection",
+                "distribution",
+                "drinking water",
+                "reuse",
+                "river",
+                "sewer",
+                "treatment"
+              )
+            </ol>
+          </li>
+        </ol>
+      `,
+      "Què s’ha de fer per afegir un projecte? Qui ho ha de fer? Com es fa?":`
+        Per afegir una eina a ITLAB cal seguir els següents passos:
+        <ol>
+          <li>Omplir la plantilla en format JSON que es pot trobar a la mateixa web de l'ITLAB.
+          <li>Enviar un Pull Request (des de GitHub) a la següent URL: https://github.com/icra/itlab/blob/main/apps.json
+          <li>Llavors els administradors d'ITLAB podran acceptar o rebutjar la petició.
+          <li>En cas de dubte, es pot contactar als administradors de l'ITLAB.
+        </ol>
+      `,
+      "Els projectes presentats inclouen les fonts de finançament? I les llicències? Hi apareix tota la gent que hi ha treballat? I els socis?":`
+        Sí, la font de finançament és un dels camps requerits per cada projecte
+        a ITLAB.  Les llicències també hi apareixen.  La gent que hi ha
+        treballat i els socis hi apareixeran, sempre que s'hagin omplert tots
+        els camps correctament a l'hora de crear un projecte.
+      `,
+      "Els links que apareixen, com els e-mails, estan tots al dia?":`
+        És possible que els links que apareixin no estiguin actualitzats, per
+        diverses raons. Caldrà una revisió periòdica dels interessats de cada
+        projecte que la informació estigui actualitzada.
+        En cas de trobar errors, es pot crear un Pull Request per proposar un
+        canvi a l'arxiu https://github.com/icra/itlab/blob/main/apps.json.
+
+        Els mails de la gent que ja no estigui a ICRA també caldrà
+        esborrar-los, ja que no seran accessibles.
+      `,
+      "Què passa si hi ha un contribuïdor extern a ICRA en el projecte degut al GitHub?":`
+        Els contribuïdors externs de cada projecte també apareixen al camp de
+        "crèdits" de cada aplicació dins de l'ITLAB
+      `,
+    },
+  },
+  "Pregunta general":{
+    "Com es proposa gestionar GitHub i ITLAB en el futur?":`
+      Cal que sempre hi hagi una persona encarregada de gestionar GitHub (un
+      "org owner"), ja que certes accions dins de la plataforma GitHub podrien
+      requerir permisos elevats (com ara esborrar/arxivar repositoris, canviar
+      la visibilitat d'un repositori, fer accions en un repositori el qual el
+      seu administrador ja no treballa a ICRA, etc.).<br><br>
+
+      Pel que fa a ITLAB, el mateix. Cal que un membre d'ICRA tingui accés
+      d'administrador al servidor on està allotjada la web (a data 15-03-2023
+      està a icra.loading.net) i tingui el coneixement per modificar els arxius
+      HTML i Javascript que conformen la web. ITLAB compta amb el seu propi repositori a GitHub:
+      <a href="https://github.com/icra/itlab">https://github.com/icra/itlab</a>.
+    `,
+  },
+};
+</script>
+
+</head><body>
+<h1>
+  <a href="index.html">Inici</a> /
+  Preguntes freqüents sobre GitHub &amp; ITLAB
+</h1>
+<code>Pàgina creada el 15-03-2023</code>
+
+<div id=app>
+  <ul>
+    <li v-for="obj,key in faqs">
+      <pregunta :pregunta=key :resposta="obj"></pregunta>
+    </li>
+  </ul>
+</div>
+
+<script>
+  let app=Vue.createApp({
+    data(){return{
+      faqs,
+    }},
+  });
+  app.component("pregunta",{
+    props:['pregunta','resposta'],
+    template:`
+      <details open>
+        <summary>{{pregunta}}</summary>
+        <div>
+          <div
+            v-if="typeof(resposta)=='string'"
+            class=resposta
+            v-html="resposta"
+          ></div>
+
+          <ul v-if="typeof(resposta)=='object'">
+            <li v-for="r,p in resposta">
+              <pregunta :pregunta=p :resposta=r></pregunta>
+            </li>
+          </ul>
+        </div>
+      </details>
+    `,
+  });
+  let mnt=app.mount("#app");
+</script>
