@@ -299,6 +299,35 @@
   },
 
   {
+    "name":"Innowatt",
+    "shortDescription":"El producte InnoWatt permet calcular la factura elèctrica a temps real, amb una precisió del 100%. Gràcies a la replicació efectiva de les factures és possible fer la optimització de la potencia contractada amb exactitud.",
+    "description":"El producte InnoWatt permet calcular la factura elèctrica a temps real, amb una precisió del 100%.  El concepte és senzill, si una empresa vol estalviar en la seva factura elèctrica ha de conèixer el seu consum energètic. Gràcies a la replicació efectiva de les factures és possible fer la optimització de la potencia contractada amb exactitud.  <iframe width='560' height='315' src='https://www.youtube.com/embed/xHMFA6va0iA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe> <p> ICRA ha desenvolupat un software capaç de llegir el consum elèctric emmagatzemat dins dels comptadors intel·ligents (smartmeters). El software “parla” el mateix idioma que els comptadors (protocol IEC 60870-5-102), i és capaç de comunicar-s’hi i llegir quanta energia s’ha consumit. Els comptados tenen acumulades sempre les dades de consum elèctric només dels 6 últims mesos en forma de “corba horària de càrrega”, és a dir, una dada de potència consumida cada hora (en kW), de manera que no cal afegir un sistema extern de medició de l’energia consumida, com fan altres productes existents al mercat, que repliquen el funcionament dels comptadors.</p>",
+    "project":"Projecte R3Water",
+    "publications":[],
+    "credits":[
+      {"name":"Lluís Bosch","position":"Software engineer","email":"lbosch@icra.cat"},
+      {"name":"Fèlix Hill","position":"Hardware and Firmware Engineer","email":""},
+      {"name":"Lluís Corominas","position":"Research Scientist","email":"lcorominas@icra.cat"}
+    ],
+    "imageName":"img/innowatt/logos_gros.png",
+    "otherImages":[
+      "img/innowatt/codiobert_comptadors-300x167.png",
+      "img/innowatt/home_innowatt_952x587.png",
+      "img/innowatt/innowatt_aplicabilitat_01_big.png",
+      "img/innowatt/innowatt_aplicabilitat_02_big.png",
+      "img/innowatt/innowatt_aplicabilitat_03_big.png"
+    ],
+    "toolLink":"https://innowatt.icra.cat/",
+    "codeLink":"https://github.com/innowatt",
+    "filters":{
+      "license type":["public"],
+      "functionality":[],
+      "topic":[],
+      "urban water cycle":[]
+    }
+  },
+
+  {
     "name":"MBR",
     "shortDescription":"MBR is a web-based app that writes and reads a database based on sensors linked to a PLC.",
     "description":"MBR is a web-based app that writes and reads a database based on sensors linked to a PLC. The \"supervisor\" model is continuously reading the PLC and feeding the database.",
