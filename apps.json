@@ -301,8 +301,8 @@
   {
     "name":"Innowatt",
     "shortDescription":"El producte InnoWatt permet calcular la factura elèctrica a temps real, amb una precisió del 100%. Gràcies a la replicació efectiva de les factures és possible fer la optimització de la potencia contractada amb exactitud.",
-    "description":"El producte InnoWatt permet calcular la factura elèctrica a temps real, amb una precisió del 100%.  El concepte és senzill, si una empresa vol estalviar en la seva factura elèctrica ha de conèixer el seu consum energètic. Gràcies a la replicació efectiva de les factures és possible fer la optimització de la potencia contractada amb exactitud.  <iframe width='560' height='315' src='https://www.youtube.com/embed/xHMFA6va0iA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe> <p> ICRA ha desenvolupat un software capaç de llegir el consum elèctric emmagatzemat dins dels comptadors intel·ligents (smartmeters). El software “parla” el mateix idioma que els comptadors (protocol IEC 60870-5-102), i és capaç de comunicar-s’hi i llegir quanta energia s’ha consumit. Els comptados tenen acumulades sempre les dades de consum elèctric només dels 6 últims mesos en forma de “corba horària de càrrega”, és a dir, una dada de potència consumida cada hora (en kW), de manera que no cal afegir un sistema extern de medició de l’energia consumida, com fan altres productes existents al mercat, que repliquen el funcionament dels comptadors.</p>",
-    "project":"Projecte R3Water",
+    "description":" <p> InnoWatt allows for the real-time calculation of the electricity bill with 100% accuracy. The concept is simple: if a company wants to save on their electricity bill, they need to know their energy consumption. Thanks to the effective replication of bills, it is possible to accurately optimize the contracted power.  </p> <iframe width='560' height='315' src='https://www.youtube.com/embed/xHMFA6va0iA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe> <p> ICRA has developed software capable of reading the electric consumption stored in smart meters. The software 'speaks' the same language as the meters (IEC 60870-5-102 protocol) and is able to communicate with them and read how much energy has been consumed. The meters always have the electric consumption data from only the last 6 months stored in the form of a 'load hourly curve', which is a power consumption data point every hour (in kW), so there is no need to add an external system for measuring the consumed energy, as other products on the market do, which replicate the operation of the meters.  </p> ",
+    "project":"R3Water project, funding from the European Union's Seventh Programme for research, technological development and demostration under grant agreement No 619093.",
     "publications":[],
     "credits":[
       {"name":"Lluís Bosch","position":"Software engineer","email":"lbosch@icra.cat"},
@@ -322,7 +322,7 @@
     "filters":{
       "license type":["public"],
       "functionality":[],
-      "topic":[],
+      "topic":["energy","costs"],
       "urban water cycle":[]
     }
   },
