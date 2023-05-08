@@ -409,14 +409,7 @@ let faqs={
 </h1>
 <code>Pàgina creada el 15-03-2023</code>
 
-<!--temporal-->
-<div
-  onclick="document.querySelector('#app').style.display=''"
-  style="cursor:pointer"
->en construcció
-</div>
-
-<div id=app style="display:none">
+<div id=app>
   <ul>
     <li v-for="obj,key in faqs">
       <pregunta :pregunta=key :resposta="obj"></pregunta>
