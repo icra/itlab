@@ -91,7 +91,13 @@
     "shortDescription":"A serious videogame for participatory urban planning of Edible City Solutions",
     "description":"The second leg of the EdiCitNet toolbox is the Edible City Game, a multiplayer serious game designed to showcase the co-benefits of Edible City Solutions. The game is a participatory urban planning process where twelve different ECS can be implemented by the players as long as they respect the normative and do not exceed their budgets. The available ECS combine different aims (communitarian or professional), technologies (soil-based or hydroponic), different locations (on the ground or rooftop) and different yields (vegetables or fruit trees). To explore the impact of these twelve ECS, 8 indicators are calculated: heat island effect; water management; green accessibility; public participation; green economy; food sovereignty; green justice. Competing with the implementation of ECS, the players can also construct social housing to avoid gentrification and install solar panels to increase the production of renewable energies in the city. The players can choose among eight different characters to play with, each character corresponds to a specific stakeholder with different interests in the city: municipality; neighbours\u2019 association; SME organization; educational sector; consumers\u2019 cooperative; social sector; conservationist NGO and tourism promotion agency. During the game, the players interact among them by buying and selling plots, granting permissions, or requesting subsidies.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
-    "publications":[],
+    "publications":[
+            {
+        "authors":"Josep Pueyo-Ros, Joaquim Comas, Ina Säumel, Joana A.C. Castellar, Lucía Alexandra Popartan, Vicenç Acuña & Lluís Corominas",
+        "title":"Design of a serious game for participatory planning of nature-based solutions: The experience of the Edible City Game",
+        "link":"https://doi.org/10.1016/j.nbsj.2023.100059"
+      }
+    ],
     "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher", "email":"jpueyo@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
