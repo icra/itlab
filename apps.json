@@ -573,7 +573,7 @@
     ],
     "imageName":"img/watexr/logo.png",
     "otherImages":["img/watexr/fig01.jpg"],
-    "toolLink":"https://watexr.eu/",
+    "toolLink":"",
     "codeLink":"https://github.com/icra/WATExR",
     "filters":{
       "license type":["public"],
