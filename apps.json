@@ -91,7 +91,13 @@
     "shortDescription":"A serious videogame for participatory urban planning of Edible City Solutions",
     "description":"The second leg of the EdiCitNet toolbox is the Edible City Game, a multiplayer serious game designed to showcase the co-benefits of Edible City Solutions. The game is a participatory urban planning process where twelve different ECS can be implemented by the players as long as they respect the normative and do not exceed their budgets. The available ECS combine different aims (communitarian or professional), technologies (soil-based or hydroponic), different locations (on the ground or rooftop) and different yields (vegetables or fruit trees). To explore the impact of these twelve ECS, 8 indicators are calculated: heat island effect; water management; green accessibility; public participation; green economy; food sovereignty; green justice. Competing with the implementation of ECS, the players can also construct social housing to avoid gentrification and install solar panels to increase the production of renewable energies in the city. The players can choose among eight different characters to play with, each character corresponds to a specific stakeholder with different interests in the city: municipality; neighbours\u2019 association; SME organization; educational sector; consumers\u2019 cooperative; social sector; conservationist NGO and tourism promotion agency. During the game, the players interact among them by buying and selling plots, granting permissions, or requesting subsidies.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
-    "publications":[],
+    "publications":[
+            {
+        "authors":"Josep Pueyo-Ros, Joaquim Comas, Ina Säumel, Joana A.C. Castellar, Lucía Alexandra Popartan, Vicenç Acuña & Lluís Corominas",
+        "title":"Design of a serious game for participatory planning of nature-based solutions: The experience of the Edible City Game",
+        "link":"https://doi.org/10.1016/j.nbsj.2023.100059"
+      }
+    ],
     "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoc researcher", "email":"jpueyo@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
@@ -122,9 +128,14 @@
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
     "publications":[
       {
-        "authors":"Castellar, Joana; A.C. Popartan, L.A. A.; Pueyo-Ros, Josep; Atanasova, N.; Langergraber, G.; Sämuel, I.; Corominas, L.; Comas, Joaquim; Acuña, V.",
-        "title":"Nature-based solutions in the urban context: terminology, classification and scoring for urban challenges and ecosystem services",
-        "link":"https://linkinghub.elsevier.com/retrieve/pii/S004896972101305X"
+        "authors":"Josep Pueyo-Ros, Joaquim Comas, Lluís Corominas",
+        "title":"ediblecity: an R package to model and estimate the benefits of urban agriculture",
+        "link":"https://open-research-europe.ec.europa.eu/articles/3-112"
+      },
+      {
+        "authors":"Josep Pueyo-Ros, Mateja Škerjanec, Joana A.C. Castellar, Nataša Atanasova, Joaquim Comas, Lluís Corominas",
+        "title":"Beyond food: A stochastic model to estimate the contributions of urban agriculture to sustainability",
+        "link":"https://doi.org/10.1016/j.landurbplan.2023.104930"
       }
     ],
     "credits":[
@@ -150,7 +161,13 @@
     "shortDescription":"Search, Learn & Create Edible City Solutions (ECS) ",
     "description":"The systemic use of urban landscapes for food production is a major step towards more sustainable, liveable and healthier cities. A multitude of initiatives around the World, however fragmented, are prospering, forming a global movement of Edible Cities. Their products, activities and services - the Edible City Solutions (ECS) - empower local communities to overcome social problems by their inclusive and participatory dynamics and to create new green businesses and jobs, and thereby generating local economic growth and fostering social cohesion.\n\nEdiCitNet will leverage the substantial benefits that ECS effect today at local level and catalyse their replication EU- and world-wide by launching a fully open and participatory network of cities, empowering their inhabitants by a common methodology\n\na) to systematically explore the wealth and diversity of existing ECS,\n\nb) to adapt, plan and implement successfully proven ECS in their specific urban context.\n\nTo make this happen, EdiCitNet will close knowledge gaps in the effective implementation of ECS and their transformation into sustainable, innovative business models. This new insight will feed into a openly shared and globally accessible knowledge base and methodology to enable sustainable and evidence-based integration of ECS into the long-term urban planning of cities covering a large spectrum of urban, climatic, social, environmental and cultural contexts.\n\n5 Front Runner Cities (FRC), supported by a highly interdisciplinary consortium of city authorities, SME, NGOs and academia, will demonstrate their unique experience with own Living Labs and transfer their knowledge to 7 dedicated Follower Cities (FC), determined to replicate ECS for the benefit of their inhabitants. The carefully selected group of FRC and FC allows to study and monitor implementation in large variety of environments and also ensures truly global outreach with city partners based in Central America, Africa and East Asia.",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
-    "publications":[],
+    "publications":[
+      {
+        "authors":"Castellar, Joana; A.C. Popartan, L.A. A.; Pueyo-Ros, Josep; Atanasova, N.; Langergraber, G.; Sämuel, I.; Corominas, L.; Comas, Joaquim; Acuña, V.",
+        "title":"Nature-based solutions in the urban context: terminology, classification and scoring for urban challenges and ecosystem services",
+        "link":"https://linkinghub.elsevier.com/retrieve/pii/S004896972101305X"
+      }
+    ],
     "credits":[
       {"name":"Joana Castellar", "position":"Postdoc Researcher", "email":"jcastellar@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
@@ -580,7 +597,7 @@
     ],
     "imageName":"img/watexr/logo.png",
     "otherImages":["img/watexr/fig01.jpg"],
-    "toolLink":"https://watexr.eu/",
+    "toolLink":"",
     "codeLink":"https://github.com/icra/WATExR",
     "filters":{
       "license type":["public"],
