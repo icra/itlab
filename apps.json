@@ -351,6 +351,30 @@
   },
 
   {
+    "name":"Nat4Wat",
+    "shortDescription":"A web-based tool to select the most suitable nature-based solutions for urban water challenges",
+    "description":"<p>Nat4Wat is a web-based tool to select the most suitable nature-based solutions (NBS) for urban water challenges. The tool is based on a comprehensive list of 53 NBS for wastewater treatment and stormwater management. The tool is based in a four-step scenario:</p><ul><li>Definition of water and operational requirements</li><li>selection of all potential NBS suitable for the scenario</li><li>Multicriteria selection of the most suitable NBS</li><li>Information about the selected technology, including a catalog of market cases and scientific publications</li></ul><p>The tool also provides information about companies with experience in building different NBS.</p>",
+    "project":"MULTISOURCE",
+    "publications":[],
+    "credits":[
+      {"name":"Josep Pueyo-Ros", "position":"Postdoctoral researcher & developer", "email":"jpueyo@icra.cat"},
+      {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
+      {"name":"David Crous", "position":"Developer"},
+      {"name": "José Notario", "position":"UX designer"}
+    ],
+    "imageName":"img/nat4wat/logo.png",
+    "otherImages":["img/nat4wat/fig1.png", "img/nat4wat/fig2.png", "img/nat4wat/fig3.png"],
+    "toolLink":"https://nat4wat.icradev.cat",
+    "codeLink":"",
+    "filters":{
+      "license type":["private"],
+      "functionality":["decision support", "design", "selection"],
+      "topic":["NBS"],
+      "urban water cycle":["treatment", "stormwater"]
+    }
+  },
+
+  {
     "name":"NBS performance assessment",
     "shortDescription":"Common list of NBS with scores addressing Urban Challenges and delivering Ecosystem Services",
     "description":"The tool provides information regarding a list of 32 NBS that gathers all typologies of NBS consented during a research study. The information displayed is the result of a participative method that crossed information from four NBS-based projects: UrbanGreenUp, UNaLAB, Nature4Cities and ThinkNature. In total, more than 250 NBS were reviewed and summed up in this comprehensive list of 32 NBS. The performance assessment also came from the assessment of the projects mentioned above.",
