@@ -157,9 +157,9 @@
   },
 
   {
-    "name":"EdiCitNet Toolbox",
-    "shortDescription":"Search, Learn & Create Edible City Solutions (ECS) ",
-    "description":"The systemic use of urban landscapes for food production is a major step towards more sustainable, liveable and healthier cities. A multitude of initiatives around the World, however fragmented, are prospering, forming a global movement of Edible Cities. Their products, activities and services - the Edible City Solutions (ECS) - empower local communities to overcome social problems by their inclusive and participatory dynamics and to create new green businesses and jobs, and thereby generating local economic growth and fostering social cohesion.\n\nEdiCitNet will leverage the substantial benefits that ECS effect today at local level and catalyse their replication EU- and world-wide by launching a fully open and participatory network of cities, empowering their inhabitants by a common methodology\n\na) to systematically explore the wealth and diversity of existing ECS,\n\nb) to adapt, plan and implement successfully proven ECS in their specific urban context.\n\nTo make this happen, EdiCitNet will close knowledge gaps in the effective implementation of ECS and their transformation into sustainable, innovative business models. This new insight will feed into a openly shared and globally accessible knowledge base and methodology to enable sustainable and evidence-based integration of ECS into the long-term urban planning of cities covering a large spectrum of urban, climatic, social, environmental and cultural contexts.\n\n5 Front Runner Cities (FRC), supported by a highly interdisciplinary consortium of city authorities, SME, NGOs and academia, will demonstrate their unique experience with own Living Labs and transfer their knowledge to 7 dedicated Follower Cities (FC), determined to replicate ECS for the benefit of their inhabitants. The carefully selected group of FRC and FC allows to study and monitor implementation in large variety of environments and also ensures truly global outreach with city partners based in Central America, Africa and East Asia.",
+    "name":"EdiCitNet Platform",
+    "shortDescription":"The world’s meeting place for sustainable urban food systems and green edible cities",
+    "description":"<p>The Edible Cities Network (Edicitnet) is a global network of cities, initiatives and individuals that work together to promote more sustainable urban food systems in cities around the world. The network was established in 2018 as a project funded by the EU commission. The main goal of the Edible Cities Network is to share knowledge, best practices, and innovative approaches to urban agriculture and local food system innovations among its members. Here the network provides a platform for its members to connect, share knowledge and experiences, learn from each other as well as collaborate on and plan new projects. </p><p>What the platform offers:</p><ul><li>A collaborative space for edible city changemakers to connect - initiatives & entrepreneurs, city administrators & neighbourhood groups.</li><li>Tools to monitor the environmental and social impact of urban food innovations.</li><li>Free support & resources, knowledge and expertise.</li><li>Urban agriculture planning featuresfor individuals + city planners</li><li>The world’s largest database of edible nature-based solutions and edible initiatives</li></ul>",
     "project":"EdiCitNet has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement num 776665.",
     "publications":[
       {
@@ -184,7 +184,7 @@
       "img/edicitnet/app_3.png",
       "img/edicitnet/app_4.png"
     ],
-    "toolLink":"http://toolbox.edicitnet.com/",
+    "toolLink":"https://ediblecitiesnetwork.com/",
     "codeLink":"",
     "filters":{
       "license type":["public"],
@@ -371,7 +371,7 @@
     "name":"Nat4Wat",
     "shortDescription":"A web-based tool to select the most suitable nature-based solutions for urban water challenges",
     "description":"<p>Nat4Wat is a web-based tool to select the most suitable nature-based solutions (NBS) for urban water challenges. The tool is based on a comprehensive list of 53 NBS for wastewater treatment and stormwater management. The tool is based in a four-step scenario:</p><ul><li>Definition of water and operational requirements</li><li>selection of all potential NBS suitable for the scenario</li><li>Multicriteria selection of the most suitable NBS</li><li>Information about the selected technology, including a catalog of market cases and scientific publications</li></ul><p>The tool also provides information about companies with experience in building different NBS.</p>",
-    "project":"MULTISOURCE",
+    "project":"Multisource received funding from the European Union’s Horizon H2020 innovation action programme under grant agreement 101003527",
     "publications":[],
     "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoctoral researcher & developer", "email":"jpueyo@icra.cat"},
@@ -384,7 +384,7 @@
     "toolLink":"https://nat4wat.icradev.cat",
     "codeLink":"",
     "filters":{
-      "license type":["private"],
+      "license type":["public"],
       "functionality":["decision support", "design", "selection"],
       "topic":["NBS"],
       "urban water cycle":["treatment", "stormwater"]
@@ -538,7 +538,13 @@
     "shortDescription":"A tool to search the best nature-based technology for water sanitation",
     "description":"A tool to search the best nature-based technology for water sanitation",
     "project":"SNAPP. Science for Nature and People partnership. Funded by The Nature Conservancy, Wildlife Conservation Society and NCEAS.",
-    "publications":[],
+    "publications":[
+      {
+        "authors":"Vicenç Acuña; Laura Castañares; Joana Castellar; Joaquim Comas; Katherine Cross; Darja Istenič; Fabio Masi; Robert McDonald; Bernhard Pucher; Josep Pueyo-Ros; Adrià Riu; Anacleto Rizzo; Massimiliano Riva; Katharina Tondera & Lluís Corominas",
+        "title":"Development of a decision-support system to select nature-based solutions for domestic wastewater treatment",
+        "link":"https://doi.org/10.2166/bgs.2023.005"
+      }
+    ],
     "credits":[
       {"name":"Vicenç Acuña", "position":"Research Scientist", "email":"vacuna@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
