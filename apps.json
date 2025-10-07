@@ -381,7 +381,7 @@
     ],
     "imageName":"img/nat4wat/logo.png",
     "otherImages":["img/nat4wat/fig1.png", "img/nat4wat/fig2.png", "img/nat4wat/fig3.png"],
-    "toolLink":"https://nat4wat.icradev.cat",
+    "toolLink":"https://nat4wat.icra.cat",
     "codeLink":"",
     "filters":{
       "license type":["public"],
