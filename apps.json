@@ -639,5 +639,66 @@
       "topic":["pollution"],
       "urban water cycle":["river", "treatment", "collection", "sewer"]
     }
+  },
+  {
+    "name":"H2Oseg-tool",
+    "shortDescription":"A web-based hydrological tool for rapid scenario comparisons",
+    "description":"The tool represents the basin as a directed river network, combining monthly water-balance calculations, groundwater gain–loss adjustments, reservoir storage and release accounting, demand and return-flow nodes, environmental-flow checks, and interactive scenario controls. It was applied to the Ter river basin , a regulated system dominated by reservoirs in its middle course and major downstream urban and agricultural demands.",
+    "project":"H2OSEG",
+    "publications":[],
+    "credits":[
+      {
+        "name":"Josep Pueyo-Ros",
+        "position":"Main developer",
+        "email":"jpueyo@icra.cat"
+      },
+      {
+        "name":"Sergi Sabater",
+        "position":"Senior researcher",
+        "email":"ssabater@icra.cat"
+      },
+      {
+        "name":"Joaquim Comas",
+        "position":"Senior researcher",
+        "email":"jpueyo@icra.cat"
+      },
+      {
+        "name":"Josep Mas-Pla",
+        "position":"Senior researcher",
+        "email":"jmaspla@icra.cat"
+      },
+      {
+        "name":"Ariadna Gabarda",
+        "position":"Project manager"
+      },
+      {
+        "name":"Alex Gou",
+        "position":"Research technician"
+      }
+    ],
+    "imageName":"img/h2oseg-ter/logo_h20seg.png",
+    "otherImages":[
+      "img/h2oseg-ter/graphical_abstract.png",
+      "img/h2oseg-ter/user_interface.png"
+    ],
+    "toolLink":"https://h2oseg-ter.icradev.cat/",
+    "codeLink":"https://github.com/icra/h2oseg_ter/",
+    "filters":{
+      "license type":[
+        "public"
+      ],
+      "functionality":[
+        "decision support",
+        "management",
+        "modelling",
+        "planning"
+      ],
+      "topic":[
+        "ecology"
+      ],
+      "urban water cycle":[
+        "river"
+      ]
+    }
   }
 ]

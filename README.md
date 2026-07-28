@@ -4,5 +4,5 @@ innovation projects with ICRA participation. It provides a description of each
 of project and gives credit to the researchers and computer engineers involved.
 It allows accessing the solutions and, in some cases, the source code. The
 ITLAB has been promoted by Dr. Lluís Corominas and Prof. Joaquim Comas and it
-is maintained by the team of computer engineers involved in the development of
-the IT solutions (Lluís Bosch, Adrià Riu, Josep Pueyo & Joan Saló).
+is currently maintained by the team of computer engineers involved in the development of
+the IT solutions (Lluís Bosch, Josep Pueyo-Ros & Oliu Llorente).
