@@ -372,7 +372,23 @@
     "shortDescription":"A web-based tool to select the most suitable nature-based solutions for urban water challenges",
     "description":"<p>Nat4Wat is a web-based tool to select the most suitable nature-based solutions (NBS) for urban water challenges. The tool is based on a comprehensive list of 53 NBS for wastewater treatment and stormwater management. The tool is based in a four-step scenario:</p><ul><li>Definition of water and operational requirements</li><li>selection of all potential NBS suitable for the scenario</li><li>Multicriteria selection of the most suitable NBS</li><li>Information about the selected technology, including a catalog of market cases and scientific publications</li></ul><p>The tool also provides information about companies with experience in building different NBS.</p>",
     "project":"Multisource received funding from the European Union’s Horizon H2020 innovation action programme under grant agreement 101003527",
-    "publications":[],
+    "publications":[
+      {
+        "authors":"Josep Pueyo-Ros, Esther Mendoza, Gianluigi Buttiglieri, Joaquim Comas",
+        "title":"Nat4wat: A Co-Developed Decision-Support System for Resilient Urban Water Management with Nature-Based Solutions",
+        "link":"https://doi.org/10.1016/j.envsoft.2025.106797"
+      },
+      {
+        "authors":"Josep Pueyo-Ros, Gianluigi Buttiglieri, Joaquim Comas",
+        "title":"No one-size-fits-all. Multicriteria selection of nature-based wastewater treatment solutions across simulated scenarios",
+        "link":"https://doi.org/10.1016/j.ecoleng.2025.107859"
+      },
+      {
+        "authors":"Josep Pueyo-Ros, Massimiliano Riva, Gisela Gonzalvo-Henry, Sophie Guillaume-Ruty, Joaquim Comas",
+        "title":"Knowledge base dataset on nature-based solutions for wastewater treatment and stormwater management",
+        "link":"https://doi.org/10.1016/J.DIB.2025.111469"
+      }
+    ],
     "credits":[
       {"name":"Josep Pueyo-Ros", "position":"Postdoctoral researcher & developer", "email":"jpueyo@icra.cat"},
       {"name":"Joaquim Comas", "position":"Senior Researcher", "email":"jcomas@icra.cat"},
