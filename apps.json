@@ -716,5 +716,127 @@
         "river"
       ]
     }
+  },
+
+  {
+    "name":"FloodRiskSwatPlus",
+    "shortDescription":"QGIS plugin to assess flood risk impacts in economic terms for SWAT+ scenarios",
+    "description":"FloodRiskSwatPlus is a QGIS plugin designed to assess flood risk impacts in economic terms for scenarios modeled with SWAT+, such as land management changes or climate change projections. It requires watershed layers and daily flow rate output data for multiple scenarios. The plugin includes a tool to generate a damage unit layer based on flood damage maps (currency/m²) for three to five return periods. Using this, the flood risk impact model estimates the expected annual damage (EAD) at the chosen administrative level, providing an economic assessment of the simulated scenarios. Additionally, it calculates the average percentage change in flood probabilities, offering valuable insights for flood risk management and adaptation planning.",
+    "project":"MERLIN",
+    "publications":[
+      {
+        "authors":"Kok S., Grondard N., Lenz M.I., Bangalore Suresh N.T., Garcia X., Llorente O., Estrada L., Acuna V., Birk S.",
+        "title":"Deliverable D3.4 Guidance Document – Cost-Benefit-Analysis in freshwater ecosystem restoration",
+        "link":"https://project-merlin.eu/deliverables/articles/deliverable-d3-4.html"
+      }
+    ],
+    "credits":[
+      {
+        "name":"Oliu Llorente",
+        "position":"Research Technician Advanced",
+        "email":"ollorente@icra.cat"
+      },
+      {
+        "name":"Xavier Garcia",
+        "position":"Research Scientist",
+        "email":"xgarcia@icra.cat"
+      },
+      {
+        "name":"Laia Estrada",
+        "position":"Predoctoral Researcher",
+        "email":"lestrada@icra.cat"
+      },
+      {
+        "name":"Vicenç Acuña",
+        "position":"Research Professor",
+        "email":"vicenc.acuna@icra.cat"
+      }
+    ],
+    "imageName":"https://plugins.qgis.org/media/cache/06/53/0653ff1bf79429eb0fe14c962d0f3be3.png",
+    "otherImages":[],
+    "toolLink":"https://plugins.qgis.org/plugins/floodriskswatplus/#plugin-details",
+    "codeLink":"https://github.com/icra/FloodRiskSwatPlus",
+    "filters":{
+      "license type":[
+        "public"
+      ],
+      "functionality":[
+        "risk",
+        "SWAT+",
+        "economic assessment",
+        "watershed",
+        "modelling"
+      ],
+      "topic":[
+        "hydrology",
+        "flood",
+        "ecology",
+        "environmental management",
+        "energy",
+        "climate change"
+      ],
+      "urban water cycle":[]
+    }
+  },
+
+  {
+    "name":"S+HydPower",
+    "shortDescription":"Plugin designed to estimate hydropower generation",
+    "description":"The S+HydPower QGIS Plugin is a powerful tool designed to estimate hydropower generation and evaluate the socioeconomic impact of watershed management measures. It accomplishes this by utilizing hydrological SWAT+ simulated outputs, which serve as the foundation for estimating hydropower generation and the associated impacts. Additionally, the plugin allows users to explore various scenarios based on the functioning and characteristics of the hydropower system. This plugin uses an icon designed by Freepick from flaticon (https://www.flaticon.com/free-icons/hydro-power)",
+    "project":"MERLIN",
+    "publications":[
+      {
+        "authors":"Xavier Garcia, Laia Estrada, Oliu Llorente and Vicenç Acuña",
+        "title":"Assessing small hydropower viability in water-scarce regions: environmental flow and climate change impacts using a SWAT+ based tool",
+        "link":"https://link.springer.com/article/10.1186/s12302-024-00938-1"
+      }
+    ],
+    "credits":[
+      {
+        "name":"Oliu Llorente",
+        "position":"Research Technician Advanced",
+        "email":"ollorente@icra.cat"
+      },
+      {
+        "name":"Xavier Garcia",
+        "position":"Research Scientist",
+        "email":"xgarcia@icra.cat"
+      },
+      {
+        "name":"Laia Estrada",
+        "position":"Predoctoral Researcher",
+        "email":"lestrada@icra.cat"
+      },
+      {
+        "name":"Vicenç Acuña",
+        "position":"Research Professor",
+        "email":"vicenc.acuna@icra.cat"
+      }
+    ],
+    "imageName":"https://plugins.qgis.org/media/cache/20/f9/20f9c460a05a7066938dafb756e06bff.png",
+    "otherImages":[],
+    "toolLink":"https://plugins.qgis.org/plugins/SPlusHydPower/#plugin-details",
+    "codeLink":"https://github.com/icra/SPlusHydPower",
+    "filters":{
+      "license type":[
+        "public"
+      ],
+      "functionality":[
+        "Python",
+        "hydropower",
+        "SWAT+",
+        "watershed",
+        "modelling"
+      ],
+      "topic":[
+      "environmental flow",
+        "climate change",
+        "costs",
+        "ecology",
+        "economic assessment",
+        "environmental management"
+      ],
+      "urban water cycle":[]
+    }
   }
 ]
